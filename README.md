@@ -1,1 +1,1 @@
-# CoC-app-NodeJS
+# Clash of Clans API project
