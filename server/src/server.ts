@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import logger from 'morgan';
-import env from 'env';
+import env from 'dotenv';
 import {Client} from "clashofclans.js";
 
 const app = express();
