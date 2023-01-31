@@ -1,5 +1,8 @@
+import axios from "axios";
 
 function App() {
+
+    axios.get('http://localhost:3001').then(r => console.log(r));
 
   return (
     <div className="App">

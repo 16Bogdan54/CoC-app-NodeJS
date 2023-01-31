@@ -18,7 +18,7 @@ const client = new Client({ keys: [process.env.API_TOKEN], cache: true, retryLim
 
 app.get('/', async (req,res) => {
     // await client.login({email: 'b.yunakov1654@gmail.com', password: '08642best'});
-    const player = await client.getPlayer("#08JCCGUP");
+    const player = await client.getPlayer("Q8JCCGUP");
     console.log(`${player.name} (${player.tag}) get`)
     res.json(player)
 })
