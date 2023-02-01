@@ -18,7 +18,7 @@ app.use((0, morgan_1.default)(formatsLogger));
 const client = new clashofclans_js_1.Client({ keys: [process.env.API_TOKEN], cache: true, retryLimit: 2, restRequestTimeout: 5000 });
 app.get('/', async (req, res) => {
     // await client.login({email: 'b.yunakov1654@gmail.com', password: '08642best'});
-    const player = await client.getPlayer("#08JCCGUP");
+    const player = await client.getPlayer("Q8JCCGUP");
     console.log(`${player.name} (${player.tag}) get`);
     res.json(player);
 });
