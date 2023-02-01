@@ -5,7 +5,7 @@ function App() {
   const [state, setState] = useState<Object>(() => {});
 
   useEffect(() => {
-    axios.get("http://localhost:3001/clan").then((r) => console.log(r.data));
+    axios.get("http://localhost:3001/player").then((r) => console.log(r.data));
   }, []);
 
   return (
