@@ -1,16 +1,16 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import PlayerProfile from "./components/client/PlayerProfile";
 
 function App() {
-  const [state, setState] = useState<Object>(() => {});
+  // const [state, setState] = useState<Object>(() => {});
 
-  useEffect(() => {
-    axios.get("http://localhost:3001/player").then((r) => console.log(r.data));
-  }, []);
+  // useEffect(() => {
+  //   axios.get("http://localhost:3001/player").then((r) => console.log(r.data));
+  // }, []);
 
   return (
     <div className="App">
-      <h1 className="text-red-300 text-3xl font-bold underline"></h1>
+      <PlayerProfile />
     </div>
   );
 }
