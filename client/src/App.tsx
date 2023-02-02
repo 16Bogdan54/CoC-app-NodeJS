@@ -1,4 +1,3 @@
-import axios from "axios";
 import PlayerProfile from "./components/client/PlayerProfile";
 
 function App() {
