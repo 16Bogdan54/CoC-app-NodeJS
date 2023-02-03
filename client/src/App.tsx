@@ -1,4 +1,4 @@
-import PlayerProfile from "./components/client/PlayerProfile";
+import PlayerProfile from "./components/player/PlayerProfile";
 
 function App() {
   // const [state, setState] = useState<Object>(() => {});

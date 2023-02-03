@@ -24,7 +24,12 @@ const PlayerProfile = () => {
       <h2>Tag: {player && player.tag}</h2>
       <h2>Level: {player && player.expLevel}</h2>
       <h2>Role: {player && player.role}</h2>
+      {player &&
+        player.labels.map((label) => (
+          <img width={50} src={label.icon.url} alt="" />
+        ))}
       <h2>Clan: {player && player.clan?.name}</h2>
+      <img width={50} src={player && player.clan?.badge.url} alt="l" />
       <h2>League: {player && player.league?.name}</h2>
       <img width={50} src={player && player.league?.icon.url} alt="l" />
       <h2>Trophies: {player && player.trophies}</h2>
