@@ -1,4 +1,6 @@
-import PlayerProfile from "./components/player/PlayerProfile";
+// import PlayerProfile from "./components/player/PlayerProfile";
+
+import HomeVillagePlayer from "./statRoutes/HomeVillagePlayer";
 
 function App() {
   // const [state, setState] = useState<Object>(() => {});
@@ -9,7 +11,8 @@ function App() {
 
   return (
     <div className="App">
-      <PlayerProfile />
+      <HomeVillagePlayer />
+      {/*<PlayerProfile />*/}
     </div>
   );
 }
