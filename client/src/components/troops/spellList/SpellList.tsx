@@ -1,7 +1,7 @@
 import React from "react";
 import { usePlayerFetch } from "../../../hooks/usePlayerFetch";
 
-const HeroesList = () => {
+const SpellList = () => {
   const [status, error, player] = usePlayerFetch();
 
   if (status === "loading") return <h1>Loading...</h1>;
@@ -9,18 +9,14 @@ const HeroesList = () => {
 
   return (
     <div>
-      {player.heroes.map((hero) => {
-        if (hero.village === "home") {
-          return (
-            <div>
-              <h1>{hero.name}</h1>
-              <h1>{hero.level}</h1>
-            </div>
-          );
-        }
-      })}
+      {player.spells.map((spell) => (
+        <div>
+          <h1>{spell.name}</h1>
+          <h1>{spell.level}</h1>
+        </div>
+      ))}
     </div>
   );
 };
 
-export default HeroesList;
+export default SpellList;
