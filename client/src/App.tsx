@@ -1,6 +1,6 @@
 // import PlayerProfile from "./components/player/PlayerProfile";
 
-import HomeVillagePlayer from "./statRoutes/HomeVillagePlayer";
+import HomeVillagePlayer from "./statRoutes/HomeVillage/HomeVillagePlayer";
 
 function App() {
   // const [state, setState] = useState<Object>(() => {});

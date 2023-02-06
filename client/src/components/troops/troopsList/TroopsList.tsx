@@ -1,7 +1,7 @@
 import React from "react";
 import { usePlayerFetch } from "../../../hooks/usePlayerFetch";
 
-const ClanInfo = () => {
+const TroopsList = () => {
   const [status, error, player] = usePlayerFetch();
 
   if (status === "loading") return <h1>Loading...</h1>;
@@ -9,10 +9,14 @@ const ClanInfo = () => {
 
   return (
     <div>
-      <h1>{player.clan?.name}</h1>
-      <img width={100} src={player.clan?.badge.url} alt="clan logo" />
+      {player.troops.map((troop) => (
+        <div>
+          <h1>{troop.name}</h1>
+          <h1>{troop.level}</h1>
+        </div>
+      ))}
     </div>
   );
 };
 
-export default ClanInfo;
+export default TroopsList;
