@@ -9,10 +9,10 @@ const HeroesList = () => {
 
   return (
     <div>
-      {player.heroes.map((hero) => {
+      {player.heroes.map((hero, index) => {
         if (hero.village === "home") {
           return (
-            <div>
+            <div key={index}>
               <h1>{hero.name}</h1>
               <h1>{hero.level}</h1>
             </div>

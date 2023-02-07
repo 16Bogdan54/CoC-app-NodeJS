@@ -10,8 +10,8 @@ const Achievements = () => {
 
   return (
     <div>
-      {player.achievements.map((achievement) => (
-        <div>
+      {player.achievements.map((achievement, index) => (
+        <div key={index}>
           <h1>{achievement.stars}</h1>
           <h1>{achievement.name}</h1>
           <h1>{achievement.info}</h1>

@@ -9,8 +9,8 @@ const SiegeMachineList = () => {
 
   return (
     <div>
-      {player.siegeMachines.map((machine) => (
-        <div>
+      {player.siegeMachines.map((machine, index) => (
+        <div key={index}>
           <h1>{machine.name}</h1>
           <h1>{machine.level}</h1>
         </div>

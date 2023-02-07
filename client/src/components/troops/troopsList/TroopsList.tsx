@@ -9,8 +9,8 @@ const TroopsList = () => {
 
   return (
     <div>
-      {player.troops.map((troop) => (
-        <div>
+      {player.troops.map((troop, index) => (
+        <div key={index}>
           <h1>{troop.name}</h1>
           <h1>{troop.level}</h1>
         </div>

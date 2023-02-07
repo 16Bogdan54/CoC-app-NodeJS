@@ -9,8 +9,8 @@ const SpellList = () => {
 
   return (
     <div>
-      {player.spells.map((spell) => (
-        <div>
+      {player.spells.map((spell, index) => (
+        <div key={index}>
           <h1>{spell.name}</h1>
           <h1>{spell.level}</h1>
         </div>
