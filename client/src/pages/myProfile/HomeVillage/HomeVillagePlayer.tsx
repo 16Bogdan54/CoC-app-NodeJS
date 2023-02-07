@@ -2,10 +2,11 @@ import React from "react";
 import Player from "../../../components/player/Player";
 import Units from "../../../components/troops/Units";
 import Achievements from "../../../components/achievements/Achievements";
-git;
+
 const HomeVillagePlayer = () => {
   return (
     <div>
+      <h1>HEllo</h1>
       <Player />
       <hr />
       <Units />
