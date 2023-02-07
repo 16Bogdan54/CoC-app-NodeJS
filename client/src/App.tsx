@@ -2,6 +2,7 @@
 
 import HomeVillagePlayer from "./pages/profiles/profilePages/HomeVillage/HomeVillagePlayer";
 import AnimatedRoutes from "./routes/AnimatedRoutes";
+import Navbar from "./components/navbar/Navbar";
 
 function App() {
   // const [state, setState] = useState<Object>(() => {});
@@ -12,6 +13,7 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar />
       {/*<HomeVillagePlayer />*/}
       {/*<PlayerProfile />*/}
       <AnimatedRoutes />
