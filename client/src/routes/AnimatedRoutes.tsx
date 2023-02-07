@@ -7,12 +7,29 @@ const MyClan = lazy(() => import("../pages/myClan/MyClan"));
 const Clans = lazy(() => import("../pages/clans/Clans"));
 const Profiles = lazy(() => import("../pages/profiles/Profiles"));
 
+const HomeVillagePlayer = lazy(
+  () => import("../pages/myProfile/HomeVillage/HomeVillagePlayer")
+);
+
 const AnimatedRoutes = () => {
   return (
     <AnimatePresence>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path="/myprofile" element={<MyProfile />} />
+          <Route path="/myprofile" element={<MyProfile />}>
+            <Route
+              path="/myprofile/home-village-profile"
+              element={<HomeVillagePlayer />}
+            />
+            <Route
+              path="/myprofile/builder-base-profile"
+              element={<div>Builder base</div>}
+            />
+            <Route
+              path="/myprofile/clan-capital-profile"
+              element={<div>Clan capital </div>}
+            />
+          </Route>
           <Route path="/myclan" element={<MyClan />} />
           <Route path="/clans" element={<Clans />} />
           <Route path="/profiles" element={<Profiles />} />
