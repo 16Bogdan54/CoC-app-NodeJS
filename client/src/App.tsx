@@ -1,6 +1,7 @@
 // import PlayerProfile from "./components/player/PlayerProfile";
 
-import HomeVillagePlayer from "./statRoutes/HomeVillage/HomeVillagePlayer";
+import HomeVillagePlayer from "./pages/profiles/profilePages/HomeVillage/HomeVillagePlayer";
+import AnimatedRoutes from "./routes/AnimatedRoutes";
 
 function App() {
   // const [state, setState] = useState<Object>(() => {});
@@ -11,8 +12,9 @@ function App() {
 
   return (
     <div className="App">
-      <HomeVillagePlayer />
+      {/*<HomeVillagePlayer />*/}
       {/*<PlayerProfile />*/}
+      <AnimatedRoutes />
     </div>
   );
 }
