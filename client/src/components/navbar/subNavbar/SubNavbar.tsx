@@ -4,13 +4,13 @@ import { NavLink } from "react-router-dom";
 const SubNavbar = () => {
   return (
     <div>
-      <NavLink className="mx-2.5" to="/myprofile/home-village-profile">
+      <NavLink className="mx-2.5" to="/my-profile/home-village-profile">
         Home Village
       </NavLink>
-      <NavLink className="mx-2.5" to="/myprofile/builder-base-profile">
+      <NavLink className="mx-2.5" to="/my-profile/builder-base-profile">
         Builder Base
       </NavLink>
-      <NavLink className="mx-2.5" to="/myprofile/clan-capital-profile">
+      <NavLink className="mx-2.5" to="/my-profile/clan-capital-profile">
         Clan Capital
       </NavLink>
     </div>

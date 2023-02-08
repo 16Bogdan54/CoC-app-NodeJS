@@ -4,10 +4,10 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
     <div>
-      <NavLink className="mx-2.5" to="/myprofile">
+      <NavLink className="mx-2.5" to="/my-profile">
         My Profile
       </NavLink>
-      <NavLink className="mx-2.5" to="/myclan">
+      <NavLink className="mx-2.5" to="/my-clan">
         My Clan
       </NavLink>
       <NavLink className="mx-2.5" to="/clans">
