@@ -2,13 +2,13 @@ import { Route, Routes } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { lazy, Suspense } from "react";
 
-const MyProfile = lazy(() => import("../pages/myProfile/MyProfile"));
-const MyClan = lazy(() => import("../pages/myClan/MyClan"));
-const Clans = lazy(() => import("../pages/clans/Clans"));
-const Profiles = lazy(() => import("../pages/profiles/Profiles"));
+const MyProfile = lazy(() => import("@/pages/myProfile/MyProfile"));
+const MyClan = lazy(() => import("@/pages/myClan/MyClan"));
+const Clans = lazy(() => import("@/pages/clans/Clans"));
+const Profiles = lazy(() => import("@/pages/profiles/Profiles"));
 
 const HomeVillagePlayer = lazy(
-  () => import("../pages/myProfile/HomeVillage/HomeVillagePlayer")
+  () => import("@/pages/myProfile/HomeVillage/HomeVillagePlayer")
 );
 
 const AnimatedRoutes = () => {

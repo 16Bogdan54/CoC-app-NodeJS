@@ -1,5 +1,5 @@
 import React from "react";
-import { usePlayerFetch } from "../../../hooks/usePlayerFetch";
+import { usePlayerFetch } from "@/hooks/usePlayerFetch";
 
 const LeagueInfo = () => {
   const [status, error, player] = usePlayerFetch();

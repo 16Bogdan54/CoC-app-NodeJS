@@ -1,8 +1,5 @@
 import React from "react";
-import { usePlayerFetch } from "../../../hooks/usePlayerFetch";
-// import { useQuery } from "@tanstack/react-query";
-// import { Player } from "clashofclans.js";
-// import { usePlayerFetch } from "../../../hooks/usePlayerFetch";
+import { usePlayerFetch } from "@/hooks/usePlayerFetch";
 
 const PlayerInfo = () => {
   const [status, error, player] = usePlayerFetch();

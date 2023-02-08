@@ -1,6 +1,5 @@
 import React from "react";
-import { usePlayerFetch } from "../../hooks/usePlayerFetch";
-import achievement from "./achievement/Achievement";
+import { usePlayerFetch } from "@/hooks/usePlayerFetch";
 
 const Achievements = () => {
   const [status, error, player] = usePlayerFetch();

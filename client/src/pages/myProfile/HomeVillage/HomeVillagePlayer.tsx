@@ -1,7 +1,7 @@
 import React from "react";
-import Player from "../../../components/player/Player";
-import Units from "../../../components/troops/Units";
-import Achievements from "../../../components/achievements/Achievements";
+import Player from "@/components/player/Player";
+import Units from "@/components/troops/Units";
+import Achievements from "@/components/achievements/Achievements";
 
 const HomeVillagePlayer = () => {
   return (

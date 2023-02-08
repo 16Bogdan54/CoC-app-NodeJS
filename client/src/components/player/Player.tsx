@@ -1,8 +1,8 @@
 import React from "react";
-import PlayerInfo from "./playerInfo/PlayerInfo";
-import ClanInfo from "./clanInfo/ClanInfo";
-import LeagueInfo from "./leagueInfo/LeagueInfo";
-import BottomInfo from "./bottomInfo/BottomInfo";
+import PlayerInfo from "@/components/player/playerInfo/PlayerInfo";
+import ClanInfo from "@/components/player/clanInfo/ClanInfo";
+import LeagueInfo from "@/components/player/leagueInfo/LeagueInfo";
+import BottomInfo from "@/components/player/bottomInfo/BottomInfo";
 
 const Player = () => {
   return (
