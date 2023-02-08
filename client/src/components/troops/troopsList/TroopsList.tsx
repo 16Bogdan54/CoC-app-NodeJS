@@ -1,11 +1,13 @@
 import React from "react";
 import { usePlayerFetch } from "@/hooks/usePlayerFetch";
+import Loader from "@/components/loader/Loader";
+import Error from "@/components/error/Error";
 
 const TroopsList = () => {
   const [status, error, player] = usePlayerFetch();
 
-  if (status === "loading") return <h1>Loading...</h1>;
-  if (error) return <h1>{JSON.stringify(error)}</h1>;
+  if (status === "loading") return <Loader />;
+  if (error) return <Error err={error} />;
 
   return (
     <div>
