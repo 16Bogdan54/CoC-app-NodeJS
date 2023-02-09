@@ -2,6 +2,7 @@ import React from "react";
 import { usePlayerFetch } from "@/hooks/usePlayerFetch";
 import Loader from "@/components/loader/Loader";
 import Error from "@/components/error/Error";
+import { getIconURL } from "@/components/utils/utils";
 
 const SpellList = () => {
   const [status, error, player] = usePlayerFetch();
@@ -15,6 +16,7 @@ const SpellList = () => {
         <div key={index}>
           <h1>{spell.name}</h1>
           <h1>{spell.level}</h1>
+          <img src={getIconURL(spell.name)} alt="icon" />
         </div>
       ))}
     </div>
