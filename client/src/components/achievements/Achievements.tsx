@@ -1,8 +1,7 @@
-import React from "react";
 import { usePlayerFetch } from "@/hooks/usePlayerFetch";
 import Loader from "@/components/loader/Loader";
 import Error from "@/components/error/Error";
-import { renderStars } from "@/components/utils/utils";
+import Achievement from "@/components/achievements/achievement/Achievement";
 
 const Achievements = () => {
   const [status, error, player] = usePlayerFetch();
@@ -12,18 +11,22 @@ const Achievements = () => {
 
   return (
     <div>
-      <h1>⚔Home Village Achievements</h1>
+      <h2>⚔Home Village Achievements</h2>
       {player.achievements
-        .filter((achievement) => achievement.village === "home")
+        .filter(
+          (achievement) =>
+            achievement.village === "home" && achievement.stars !== 0
+        )
         .map((achievement, index) => (
           <div key={index}>
-            {/*<h1>{achievement.stars}</h1>*/}
-            <h1>{renderStars(achievement.stars)}</h1>
-            <h1>{achievement.name}</h1>
-            <h1>{achievement.info}</h1>
+            <Achievement
+              name={achievement.name}
+              info={achievement.info}
+              stars={achievement.stars}
+            />
           </div>
         ))}
-      <h1>⚔Builder Base Achievements</h1>
+      <h2>⚔Builder Base Achievements</h2>
       {player.achievements
         .filter(
           (achievement) =>
@@ -31,10 +34,11 @@ const Achievements = () => {
         )
         .map((achievement, index) => (
           <div key={index}>
-            {/*<h1>{achievement.stars}</h1>*/}
-            <h1>{renderStars(achievement.stars)}</h1>
-            <h1>{achievement.name}</h1>
-            <h1>{achievement.info}</h1>
+            <Achievement
+              name={achievement.name}
+              info={achievement.info}
+              stars={achievement.stars}
+            />
           </div>
         ))}
     </div>

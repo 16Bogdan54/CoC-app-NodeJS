@@ -1,7 +1,22 @@
-import React from "react";
+import { renderStars } from "@/components/utils/utils";
 
-const Achievement = () => {
-  return <div></div>;
+type Props = {
+  name: string;
+  info: string;
+  stars: number;
+};
+
+const Achievement = ({ name, info, stars }: Props) => {
+  return (
+    <div className="flex items-center w-1/4">
+      <span>{renderStars(stars)}</span>
+      <div>
+        <h3>{name}</h3>
+        <p>{info}</p>
+      </div>
+      <span>✅</span>
+    </div>
+  );
 };
 
 export default Achievement;
