@@ -11,12 +11,12 @@ const SpellList = () => {
   if (error) return <Error err={error} />;
 
   return (
-    <div>
+    <div className="w-full flex items-center justify-center">
       {player.spells.map((spell, index) => (
         <div key={index}>
-          <h1>{spell.name}</h1>
+          {/*<h1>{spell.name}</h1>*/}
+          <img width={50} src={getIconURL(spell.name)} alt="icon" />
           <h1>{spell.level}</h1>
-          <img src={getIconURL(spell.name)} alt="icon" />
         </div>
       ))}
     </div>

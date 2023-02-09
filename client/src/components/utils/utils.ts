@@ -4,3 +4,7 @@ export const getIconURL = (unitName: string): string => {
     "_"
   )}.png`;
 };
+
+export const renderStars = (numberOfStars: number): string => {
+  return "⭐".repeat(numberOfStars);
+};

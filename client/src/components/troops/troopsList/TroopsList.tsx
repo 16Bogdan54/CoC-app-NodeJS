@@ -11,14 +11,18 @@ const TroopsList = () => {
   if (error) return <Error err={error} />;
 
   return (
-    <div>
-      {player.troops.map((troop, index) => (
-        <div key={index}>
-          <h1>{troop.name}</h1>
-          <h1>{troop.level}</h1>
-          <img src={getIconURL(troop.name)} alt="icon" />
-        </div>
-      ))}
+    <div className="w-full flex items-center justify-center">
+      {player.troops.map((troop, index) => {
+        if (troop.village === "home" && !troop.originalName) {
+          return (
+            <div key={index}>
+              {/*<h1>{troop.name}</h1>*/}
+              <img width={50} src={getIconURL(troop.name)} alt="icon" />
+              <h1>{troop.level}</h1>
+            </div>
+          );
+        }
+      })}
     </div>
   );
 };

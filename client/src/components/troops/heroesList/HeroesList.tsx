@@ -11,14 +11,14 @@ const HeroesList = () => {
   if (error) return <Error err={error} />;
 
   return (
-    <div>
+    <div className="w-full flex items-center justify-center">
       {player.heroes.map((hero, index) => {
         if (hero.village === "home") {
           return (
             <div key={index}>
-              <h1>{hero.name}</h1>
+              {/*<h1>{hero.name}</h1>*/}
+              <img width={50} src={getIconURL(hero.name)} alt="icon" />
               <h1>{hero.level}</h1>
-              <img src={getIconURL(hero.name)} alt="icon" />
             </div>
           );
         }
