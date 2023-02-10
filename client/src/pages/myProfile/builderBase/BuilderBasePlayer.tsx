@@ -1,0 +1,20 @@
+import PlayerVersus from "@/components/player/PlayerVersus";
+import BuilderBaseTroops from "@/components/troops/builderBaseTroops/BuilderBaseTroops";
+import BuilderBaseHeroes from "@/components/troops/builderBaseHeroes/BuilderBaseHeroes";
+import Achievements from "@/components/achievements/Achievements";
+import React from "react";
+
+const BuilderBasePlayer = () => {
+  return (
+    <div>
+      <PlayerVersus />
+      <hr />
+      <BuilderBaseTroops />
+      <BuilderBaseHeroes />
+      <hr />
+      <Achievements />
+    </div>
+  );
+};
+
+export default BuilderBasePlayer;

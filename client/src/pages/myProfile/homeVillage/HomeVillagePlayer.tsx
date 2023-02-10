@@ -1,12 +1,12 @@
 import React from "react";
-import Player from "@/components/player/Player";
+import PlayerHome from "@/components/player/PlayerHome";
 import Units from "@/components/troops/Units";
 import Achievements from "@/components/achievements/Achievements";
 
 const HomeVillagePlayer = () => {
   return (
     <div>
-      <Player />
+      <PlayerHome />
       <hr />
       <Units />
       <hr />

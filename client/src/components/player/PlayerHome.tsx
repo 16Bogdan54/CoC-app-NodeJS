@@ -4,7 +4,7 @@ import ClanInfo from "@/components/player/clanInfo/ClanInfo";
 import LeagueInfo from "@/components/player/leagueInfo/LeagueInfo";
 import BottomInfo from "@/components/player/bottomInfo/BottomInfo";
 
-const Player = () => {
+const PlayerHome = () => {
   return (
     <div>
       <PlayerInfo />
@@ -15,4 +15,4 @@ const Player = () => {
   );
 };
 
-export default Player;
+export default PlayerHome;

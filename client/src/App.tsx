@@ -1,6 +1,6 @@
 // import PlayerProfile from "./components/player/PlayerProfile";
 
-import HomeVillagePlayer from "./pages/myProfile/HomeVillage/HomeVillagePlayer";
+import HomeVillagePlayer from "./pages/myProfile/homeVillage/HomeVillagePlayer";
 import AnimatedRoutes from "./routes/AnimatedRoutes";
 import Navbar from "./components/navbar/Navbar";
 
