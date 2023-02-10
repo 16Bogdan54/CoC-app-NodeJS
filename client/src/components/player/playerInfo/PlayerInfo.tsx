@@ -1,13 +1,7 @@
-import React from "react";
-import { usePlayerFetch } from "@/hooks/usePlayerFetch";
-import Loader from "@/components/loader/Loader";
-import Error from "@/components/error/Error";
+import { useQueryCache } from "@/hooks/useQueryCache";
 
 const PlayerInfo = () => {
-  const [status, error, player] = usePlayerFetch();
-
-  if (status === "loading") return <Loader />;
-  if (error) return <Error err={error} />;
+  const player = useQueryCache("playerData");
 
   return (
     <div>

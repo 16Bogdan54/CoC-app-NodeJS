@@ -8,7 +8,7 @@ type Props = {
 
 const Achievement = ({ name, info, stars }: Props) => {
   return (
-    <div className="flex items-center w-1/4">
+    <div className="flex items-center justify-center w-1/3">
       <span>{renderStars(stars)}</span>
       <div>
         <h3>{name}</h3>

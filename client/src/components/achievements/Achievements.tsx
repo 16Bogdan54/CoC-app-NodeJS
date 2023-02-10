@@ -1,13 +1,8 @@
-import { usePlayerFetch } from "@/hooks/usePlayerFetch";
-import Loader from "@/components/loader/Loader";
-import Error from "@/components/error/Error";
 import Achievement from "@/components/achievements/achievement/Achievement";
+import { useQueryCache } from "@/hooks/useQueryCache";
 
 const Achievements = () => {
-  const [status, error, player] = usePlayerFetch();
-
-  if (status === "loading") return <Loader />;
-  if (error) return <Error err={error} />;
+  const player = useQueryCache("playerData");
 
   return (
     <div>
