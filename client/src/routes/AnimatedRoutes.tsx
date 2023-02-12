@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { lazy, Suspense } from "react";
 import BuilderBasePlayer from "@/pages/myProfile/builderBase/BuilderBasePlayer";
+import ClanCapital from "@/pages/myProfile/clanCapital/ClanCapital";
 
 const MyProfile = lazy(() => import("@/pages/myProfile/MyProfile"));
 const MyClan = lazy(() => import("@/pages/myClan/MyClan"));
@@ -25,7 +26,7 @@ const AnimatedRoutes = () => {
             />
             <Route
               path="/my-profile/clan-capital-profile"
-              element={<div>Clan capital </div>}
+              element={<ClanCapital />}
             />
           </Route>
           <Route path="/my-clan" element={<MyClan />} />
