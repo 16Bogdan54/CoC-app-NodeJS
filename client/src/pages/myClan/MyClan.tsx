@@ -2,7 +2,8 @@ import React from "react";
 import { useClanFetch } from "@/hooks/useClanFetch";
 import Loader from "@/components/loader/Loader";
 import Error from "@/components/error/Error";
-import HomeVillageClan from "@/pages/myClan/homeVillage/HomeVillageClan";
+import MyClanSubNavbar from "@/components/navbar/myClanSubNavbar/MyClanSubNavbar";
+import { Outlet } from "react-router-dom";
 
 const MyClan = () => {
   const [status, error] = useClanFetch();
@@ -12,7 +13,8 @@ const MyClan = () => {
 
   return (
     <div>
-      <HomeVillageClan />
+      <MyClanSubNavbar />
+      <Outlet />
     </div>
   );
 };
