@@ -1,4 +1,4 @@
-import SubNavbar from "@/components/navbar/subNavbar/SubNavbar";
+import MyProfileSubNavbar from "@/components/navbar/myProfileSubNavbar/MyProfileSubNavbar";
 import { Outlet } from "react-router-dom";
 import { usePlayerFetch } from "@/hooks/usePlayerFetch";
 import Loader from "@/components/loader/Loader";
@@ -12,7 +12,7 @@ const MyProfile = () => {
 
   return (
     <div>
-      <SubNavbar />
+      <MyProfileSubNavbar />
       <Outlet />
     </div>
   );

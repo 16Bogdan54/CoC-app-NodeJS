@@ -1,10 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const SubNavbar = () => {
+const MyProfileSubNavbar = () => {
   return (
     <div>
-      <NavLink className="mx-2.5" to="/my-profile/home-village-profile">
+      <NavLink className="mx-2.5" to="/my-profile/">
         Home Village
       </NavLink>
       <NavLink className="mx-2.5" to="/my-profile/builder-base-profile">
@@ -17,4 +17,4 @@ const SubNavbar = () => {
   );
 };
 
-export default SubNavbar;
+export default MyProfileSubNavbar;

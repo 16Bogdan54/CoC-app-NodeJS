@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const Navbar = () => {
+const MainNavbar = () => {
   return (
     <div>
       <NavLink className="mx-2.5" to="/my-profile">
@@ -20,4 +20,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default MainNavbar;

@@ -1,21 +1,10 @@
-// import PlayerProfile from "./components/player/PlayerProfile";
-
-import HomeVillagePlayer from "./pages/myProfile/homeVillage/HomeVillagePlayer";
 import AnimatedRoutes from "./routes/AnimatedRoutes";
-import Navbar from "./components/navbar/Navbar";
+import MainNavbar from "src/components/navbar/MainNavbar";
 
 function App() {
-  // const [state, setState] = useState<Object>(() => {});
-
-  // useEffect(() => {
-  //   axios.get("http://localhost:3001/player").then((r) => console.log(r.data));
-  // }, []);
-
   return (
     <div className="App">
-      <Navbar />
-      {/*<HomeVillagePlayer />*/}
-      {/*<PlayerProfile />*/}
+      <MainNavbar />
       <AnimatedRoutes />
     </div>
   );
