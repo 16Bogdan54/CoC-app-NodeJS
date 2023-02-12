@@ -4,6 +4,7 @@ import { lazy, Suspense } from "react";
 import BuilderBasePlayer from "@/pages/myProfile/builderBase/BuilderBasePlayer";
 import ClanCapital from "@/pages/myProfile/clanCapital/ClanCapital";
 import HomeVillageClan from "@/pages/myClan/homeVillage/HomeVillageClan";
+import Loader from "@/components/loader/Loader";
 
 const MyProfile = lazy(() => import("@/pages/myProfile/MyProfile"));
 const MyClan = lazy(() => import("@/pages/myClan/MyClan"));
@@ -17,7 +18,7 @@ const HomeVillagePlayer = lazy(
 const AnimatedRoutes = () => {
   return (
     <AnimatePresence>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/my-profile" element={<MyProfile />}>
             <Route path="/my-profile" element={<HomeVillagePlayer />} />
