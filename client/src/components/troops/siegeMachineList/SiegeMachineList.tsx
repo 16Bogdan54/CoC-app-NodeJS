@@ -1,8 +1,9 @@
 import { useQueryCache } from "@/hooks/useQueryCache";
 import { getIconURL } from "@/components/utils/utils";
+import { Player } from "clashofclans.js";
 
 const SiegeMachineList = () => {
-  const player = useQueryCache("playerData");
+  const player = useQueryCache<Player>("playerData");
 
   return (
     <div className="w-full flex items-center justify-center">

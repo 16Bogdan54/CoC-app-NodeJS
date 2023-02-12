@@ -1,8 +1,9 @@
 import { useQueryCache } from "@/hooks/useQueryCache";
 import { getIconURL } from "@/components/utils/utils";
+import { Player } from "clashofclans.js";
 
 const BuilderBaseHeroes = () => {
-  const player = useQueryCache("playerData");
+  const player = useQueryCache<Player>("playerData");
 
   return (
     <div>

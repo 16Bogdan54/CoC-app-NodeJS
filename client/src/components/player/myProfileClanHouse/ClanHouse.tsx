@@ -1,8 +1,9 @@
 import React from "react";
 import { useQueryCache } from "@/hooks/useQueryCache";
+import { Player } from "clashofclans.js";
 
 const ClanHouse = () => {
-  const player = useQueryCache("playerData");
+  const player = useQueryCache<Player>("playerData");
 
   return (
     <div>

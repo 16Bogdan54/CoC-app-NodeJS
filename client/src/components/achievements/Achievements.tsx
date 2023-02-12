@@ -1,8 +1,9 @@
 import Achievement from "@/components/achievements/achievement/Achievement";
 import { useQueryCache } from "@/hooks/useQueryCache";
+import { Player } from "clashofclans.js";
 
 const Achievements = () => {
-  const player = useQueryCache("playerData");
+  const player = useQueryCache<Player>("playerData");
 
   return (
     <div>

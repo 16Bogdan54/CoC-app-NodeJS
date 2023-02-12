@@ -1,8 +1,9 @@
 import { getIconURL } from "@/components/utils/utils";
 import { useQueryCache } from "@/hooks/useQueryCache";
+import { Player } from "clashofclans.js";
 
 const SpellList = () => {
-  const player = useQueryCache("playerData");
+  const player = useQueryCache<Player>("playerData");
 
   return (
     <div className="w-full flex items-center justify-center">

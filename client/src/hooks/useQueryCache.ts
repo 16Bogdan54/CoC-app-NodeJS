@@ -1,7 +1,7 @@
 import { useQueryClient } from "@tanstack/react-query";
-import { Player } from "clashofclans.js";
+// import { Player } from "clashofclans.js";
 
-export const useQueryCache = (key: string): Player => {
+export const useQueryCache = <T>(key: string): T => {
   const client = useQueryClient();
-  return <Player>client.getQueryData([key]);
+  return <T>client.getQueryData([key]);
 };
