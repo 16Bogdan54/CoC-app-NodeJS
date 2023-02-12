@@ -2,6 +2,7 @@ import React from "react";
 import { useClanFetch } from "@/hooks/useClanFetch";
 import Loader from "@/components/loader/Loader";
 import Error from "@/components/error/Error";
+import HomeVillageClan from "@/pages/myClan/homeVillage/HomeVillageClan";
 
 const MyClan = () => {
   const [status, error] = useClanFetch();
@@ -11,7 +12,7 @@ const MyClan = () => {
 
   return (
     <div>
-      <h1>My Clan</h1>
+      <HomeVillageClan />
     </div>
   );
 };
