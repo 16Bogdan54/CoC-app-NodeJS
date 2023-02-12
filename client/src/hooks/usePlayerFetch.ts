@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { Player } from "clashofclans.js";
-import { getData } from "./utils";
+import { getPlayer } from "@/api/getPlayer";
 
 type playerData = [string, unknown, Player];
 
@@ -11,7 +11,7 @@ export const usePlayerFetch = (): playerData => {
     data: player,
   } = useQuery<Player>({
     queryKey: ["playerData"],
-    queryFn: getData,
+    queryFn: getPlayer,
   });
 
   return <[string, unknown, Player]>[status, error, player];
