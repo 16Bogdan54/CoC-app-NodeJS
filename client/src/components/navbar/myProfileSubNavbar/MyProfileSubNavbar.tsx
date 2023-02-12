@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const MyProfileSubNavbar = () => {
   return (
     <div>
-      <NavLink className="mx-2.5" to="/my-profile/">
+      <NavLink className="mx-2.5" to="/my-profile">
         Home Village
       </NavLink>
       <NavLink className="mx-2.5" to="/my-profile/builder-base-profile">
