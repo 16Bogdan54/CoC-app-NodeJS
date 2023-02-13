@@ -5,6 +5,7 @@ import BuilderBasePlayer from "@/pages/myProfile/builderBase/BuilderBasePlayer";
 import ClanCapital from "@/pages/myProfile/clanCapital/ClanCapital";
 import HomeVillageClan from "@/pages/myClan/homeVillage/HomeVillageClan";
 import Loader from "@/components/loader/Loader";
+import BuilderBaseClan from "@/pages/myClan/builderBase/BuilderBaseClan";
 
 const MyProfile = lazy(() => import("@/pages/myProfile/MyProfile"));
 const MyClan = lazy(() => import("@/pages/myClan/MyClan"));
@@ -35,7 +36,7 @@ const AnimatedRoutes = () => {
             <Route path="/my-clan" element={<HomeVillageClan />} />
             <Route
               path="/my-clan/builder-base-clan"
-              element={<div>builder base</div>}
+              element={<BuilderBaseClan />}
             />
             <Route path="/my-clan/capital-clan" element={<div>capital</div>} />
           </Route>
