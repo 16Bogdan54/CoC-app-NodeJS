@@ -1,7 +1,7 @@
 import React from "react";
 import ClanDescription from "@/components/clanDescription/ClanDescription";
 import ClanStat from "@/components/clanStat/ClanStat";
-import MembersBuilderBase from "@/membersBuilderBase/MembersBuilderBase";
+import MembersBuilderBase from "@/components/membersBuilderBase/MembersBuilderBase";
 
 const BuilderBaseClan = () => {
   return (
