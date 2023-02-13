@@ -1,20 +1,32 @@
 import { Route, Routes } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { lazy, Suspense } from "react";
-import BuilderBasePlayer from "@/pages/myProfile/builderBase/BuilderBasePlayer";
-import ClanCapital from "@/pages/myProfile/clanCapital/ClanCapital";
-import HomeVillageClan from "@/pages/myClan/homeVillage/HomeVillageClan";
 import Loader from "@/components/loader/Loader";
-import BuilderBaseClan from "@/pages/myClan/builderBase/BuilderBaseClan";
 
 const MyProfile = lazy(() => import("@/pages/myProfile/MyProfile"));
-const MyClan = lazy(() => import("@/pages/myClan/MyClan"));
-const Clans = lazy(() => import("@/pages/clans/Clans"));
-const Profiles = lazy(() => import("@/pages/profiles/Profiles"));
-
 const HomeVillagePlayer = lazy(
   () => import("@/pages/myProfile/homeVillage/HomeVillagePlayer")
 );
+const BuilderBasePlayer = lazy(
+  () => import("@/pages/myProfile/builderBase/BuilderBasePlayer")
+);
+
+const ClanCapitalPlayer = lazy(
+  () => import("@/pages/myProfile/clanCapital/ClanCapital")
+);
+
+const MyClan = lazy(() => import("@/pages/myClan/MyClan"));
+
+const HomeVillageClan = lazy(
+  () => import("@/pages/myClan/homeVillage/HomeVillageClan")
+);
+
+const BuilderBaseClan = lazy(
+  () => import("@/pages/myClan/builderBase/BuilderBaseClan")
+);
+
+const Clans = lazy(() => import("@/pages/clans/Clans"));
+const Profiles = lazy(() => import("@/pages/profiles/Profiles"));
 
 const AnimatedRoutes = () => {
   return (
@@ -29,7 +41,7 @@ const AnimatedRoutes = () => {
             />
             <Route
               path="/my-profile/clan-capital-profile"
-              element={<ClanCapital />}
+              element={<ClanCapitalPlayer />}
             />
           </Route>
           <Route path="/my-clan" element={<MyClan />}>
