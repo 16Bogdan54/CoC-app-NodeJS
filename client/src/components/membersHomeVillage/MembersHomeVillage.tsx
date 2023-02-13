@@ -10,7 +10,6 @@ const MembersHomeVillage = () => {
         <div key={index}>
           <h1>{member.clanRank}</h1>
           <img width={30} src={member.league.icon.url} alt="league" />
-          <h1>{member.expLevel}</h1>
           <h1>{member.name}</h1>
           <h1>{member.role}</h1>
           <h1>Troops donated:</h1>
