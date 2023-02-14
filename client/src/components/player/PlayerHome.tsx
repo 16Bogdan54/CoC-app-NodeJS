@@ -13,8 +13,8 @@ const PlayerHome = () => {
         <PlayerInfo />
         <ClanInfo />
         <LeagueInfo />
-        <BottomInfo />
       </div>
+      <BottomInfo />
     </div>
   );
 };
