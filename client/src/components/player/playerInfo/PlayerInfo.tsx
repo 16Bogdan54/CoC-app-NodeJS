@@ -10,7 +10,7 @@ const PlayerInfo = () => {
       <div className="flex items-center">
         <div className={style.exp_lvl}>{player.expLevel}</div>
         <div>
-          <h2 className="text-2xl text-white ">{player.name}</h2>
+          <h2 className="text-2xl text-white font-bold">{player.name}</h2>
           <span className="text-lg text-gray-200">{player.tag}</span>
           <h3 className="text-xl text-white">{player.role}</h3>
         </div>
