@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import { usePlayerFetch } from "@/hooks/usePlayerFetch";
 import Loader from "@/components/loader/Loader";
 import Error from "@/components/error/Error";
+import style from "@/pages/myProfile/MyProfile.module.css";
 
 const MyProfile = () => {
   const [status, error] = usePlayerFetch();
@@ -11,7 +12,7 @@ const MyProfile = () => {
   if (error) return <Error err={error} />;
 
   return (
-    <div>
+    <div className={style.myProfile}>
       <MyProfileSubNavbar />
       <Outlet />
     </div>

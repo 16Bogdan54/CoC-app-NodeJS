@@ -4,13 +4,17 @@ import ClanInfo from "@/components/player/clanInfo/ClanInfo";
 import LeagueInfo from "@/components/player/leagueInfo/LeagueInfo";
 import BottomInfo from "@/components/player/bottomInfo/BottomInfo";
 
+import style from "./style/style.module.css";
+
 const PlayerHome = () => {
   return (
-    <div>
-      <PlayerInfo />
-      <ClanInfo />
-      <LeagueInfo />
-      <BottomInfo />
+    <div className={style.player_home_container}>
+      <div className={style.player_home_inner}>
+        <PlayerInfo />
+        <ClanInfo />
+        <LeagueInfo />
+        <BottomInfo />
+      </div>
     </div>
   );
 };
