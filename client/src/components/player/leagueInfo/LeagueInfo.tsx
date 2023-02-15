@@ -18,14 +18,15 @@ const LeagueInfo = () => {
       <div className="flex justify-between items-center">
         <div className={style.war_stars_block}>
           <h1>War Stars Won:</h1>
-          <div className="bg-[#3a385d] rounded-md text-end px-2">
+          <div className="flex justify-between items-center bg-[#3a385d] rounded-md px-1">
+            <span>🌟</span>
             <h1>{player.warStars}</h1>
           </div>
         </div>
         <div className={style.trophies_block}>
           <h1>All time best:</h1>
-          <div className="flex justify-center items-center bg-[#3a385d] rounded-md px-1">
-            <span className="mr-2">🏆</span>
+          <div className="flex justify-between items-center bg-[#3a385d] rounded-md px-1">
+            <span>🏆</span>
             <span>{player.bestTrophies}</span>
           </div>
         </div>
