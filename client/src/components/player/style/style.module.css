@@ -1,5 +1,5 @@
 .player_home_container {
-    @apply bg-[#69799A]  border-[5px] border-[#6A7497] rounded-[16px]
+    @apply bg-[#69799A]  border-[3px] border-[#6A7497] rounded-[16px]
 }
 
 .player_home_inner {
