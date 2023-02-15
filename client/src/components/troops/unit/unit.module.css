@@ -1,0 +1,7 @@
+.unit {
+    @apply relative border-2 border-black w-[70px]
+}
+
+.lvl {
+    @apply absolute bottom-0 left-1 bg-black p-0.5 text-sm rounded-2xl
+}

@@ -1,4 +1,4 @@
-import React from "react";
+import Unit from "@/components/troops/unit/Unit";
 import { getIconURL } from "@/components/utils/utils";
 import { useQueryCache } from "@/hooks/useQueryCache";
 import { Player } from "clashofclans.js";
@@ -7,7 +7,7 @@ const TroopsList = () => {
   const player = useQueryCache<Player>("playerData");
 
   return (
-    <div className="w-full flex items-center justify-center">
+    <div className="flex items-center justify-start flex-wrap gap-2">
       {player.troops.map((troop, index) => {
         if (
           troop.village === "home" &&
@@ -15,10 +15,11 @@ const TroopsList = () => {
           troop.unlockBuilding !== "Workshop"
         ) {
           return (
-            <div key={index}>
-              <img width={50} src={getIconURL(troop.name)} alt="icon" />
-              <h1>{troop.level}</h1>
-            </div>
+            <Unit
+              key={index}
+              picURL={getIconURL(troop.name)}
+              lvl={troop.level}
+            />
           );
         }
       })}
