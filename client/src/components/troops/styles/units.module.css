@@ -1,0 +1,8 @@
+.units_container {
+    @apply bg-[#69799A]  border-[3px] border-[#6A7497] rounded-[16px]
+}
+
+.units_inner {
+    @apply bg-gradient-to-t from-[blue-gray-500] to-transparent
+    rounded-2xl text-white grid justify-center grid-cols-[200px_minmax(500px,_1fr)_100px]
+}
