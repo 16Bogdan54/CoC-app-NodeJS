@@ -16,10 +16,6 @@ const SiegeMachineList = () => {
               picURL={getIconURL(troop.name)}
               lvl={troop.level}
             />
-            // <div key={index}>
-            //   <img width={50} src={getIconURL(troop.name)} alt="icon" />
-            //   <h1>{troop.level}</h1>
-            // </div>
           );
         }
       })}
