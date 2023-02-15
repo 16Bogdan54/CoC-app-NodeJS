@@ -5,21 +5,21 @@ const BottomInfo = () => {
   const player = useQueryCache<Player>("playerData");
 
   return (
-    <div className="flex justify-between align-center">
+    <div className="flex justify-between align-center bg-[#494c79] text-white">
       <div>
         <span>Troops donated:</span>
         <span>{player.donations}</span>
       </div>
       <div>
-        <span>Troops received</span>
-        <span>{player.received}</span>
+        <span>Troops received:</span>
+        <span>{player.received}:</span>
       </div>
       <div>
         <span>Attacks Won:</span>
         <span>{player.attackWins}</span>
       </div>
       <div>
-        <span>Defenses Won</span>
+        <span>Defenses Won:</span>
         <span>{player.defenseWins}</span>
       </div>
     </div>

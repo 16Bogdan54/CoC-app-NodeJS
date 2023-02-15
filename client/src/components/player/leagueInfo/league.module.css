@@ -1,5 +1,5 @@
 .league_block {
-    @apply flex
+    @apply flex items-center
 }
 
 .war_stars_block {}
