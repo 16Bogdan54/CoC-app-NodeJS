@@ -1,5 +1,7 @@
 import { renderStars } from "@/components/utils/utils";
 
+import style from "./achievement.module.css";
+
 type Props = {
   name: string;
   info: string;
@@ -8,13 +10,13 @@ type Props = {
 
 const Achievement = ({ name, info, stars }: Props) => {
   return (
-    <div className="flex items-center justify-center w-1/3">
-      <span>{renderStars(stars)}</span>
-      <div>
-        <h3>{name}</h3>
-        <p>{info}</p>
+    <div className={style.achieve_container}>
+      <span className="text-xl">{renderStars(stars)}</span>
+      <div className="ml-2">
+        <h3 className="text-xl">{name}</h3>
+        <p className="text-xl">{info}</p>
       </div>
-      <span>✅</span>
+      <span className="ml-auto text-2xl">✅</span>
     </div>
   );
 };

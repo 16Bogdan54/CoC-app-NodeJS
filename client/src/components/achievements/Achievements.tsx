@@ -7,7 +7,7 @@ const Achievements = () => {
 
   return (
     <div>
-      <h2>⚔Home Village Achievements</h2>
+      <h2 className="text-2xl">⚔Home Village Achievements</h2>
       {player.achievements
         .filter(
           (achievement) =>
@@ -22,7 +22,7 @@ const Achievements = () => {
             />
           </div>
         ))}
-      <h2>⚔Builder Base Achievements</h2>
+      <h2 className="text-2xl">⚔Builder Base Achievements</h2>
       {player.achievements
         .filter(
           (achievement) =>

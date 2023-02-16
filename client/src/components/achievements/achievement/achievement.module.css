@@ -1,0 +1,3 @@
+.achieve_container {
+    @apply flex items-center bg-[#9ea6b0] my-2 rounded-lg p-2
+}
