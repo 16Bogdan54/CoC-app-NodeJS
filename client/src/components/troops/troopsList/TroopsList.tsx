@@ -3,11 +3,13 @@ import { getIconURL } from "@/components/utils/utils";
 import { useQueryCache } from "@/hooks/useQueryCache";
 import { Player } from "clashofclans.js";
 
+import style from "./troops.module.css";
+
 const TroopsList = () => {
   const player = useQueryCache<Player>("playerData");
 
   return (
-    <div className="flex items-center justify-start flex-wrap gap-2">
+    <div className={style.troops_container}>
       {player.troops.map((troop, index) => {
         if (
           troop.village === "home" &&

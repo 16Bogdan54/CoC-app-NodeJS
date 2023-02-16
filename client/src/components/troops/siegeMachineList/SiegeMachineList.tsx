@@ -3,11 +3,13 @@ import { getIconURL } from "@/components/utils/utils";
 import { Player } from "clashofclans.js";
 import Unit from "@/components/troops/unit/Unit";
 
+import style from "./siege.module.css";
+
 const SiegeMachineList = () => {
   const player = useQueryCache<Player>("playerData");
 
   return (
-    <div className="flex items-center justify-start flex-wrap gap-2 my-2">
+    <div className={style.siege_container}>
       {player.troops.map((troop, index) => {
         if (troop.unlockBuilding === "Workshop") {
           return (
