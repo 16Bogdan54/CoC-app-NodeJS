@@ -3,5 +3,5 @@
 }
 
 .lvl {
-    @apply absolute bottom-0 left-1 bg-black p-0.5 text-sm rounded-2xl
+    @apply absolute bottom-0 left-1 bg-black px-1 text-sm rounded-2xl
 }
