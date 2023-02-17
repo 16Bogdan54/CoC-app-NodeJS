@@ -1,4 +1,3 @@
-import React from "react";
 import PlayerInfo from "@/components/player/playerInfo/PlayerInfo";
 import ClanInfo from "@/components/player/clanInfo/ClanInfo";
 import LeagueInfo from "@/components/player/leagueInfo/LeagueInfo";
@@ -8,8 +7,8 @@ import style from "./style/style.module.css";
 
 const PlayerHome = () => {
   return (
-    <div className={style.player_home_container}>
-      <div className={style.player_home_inner}>
+    <div className={style.player_container}>
+      <div className={style.player_inner}>
         <PlayerInfo />
         <ClanInfo />
         <LeagueInfo />

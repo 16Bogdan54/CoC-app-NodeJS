@@ -1,8 +1,8 @@
-.player_home_container {
+.player_container {
     @apply bg-[#69799A]  border-[3px] border-[#6A7497] rounded-[16px]
 }
 
-.player_home_inner {
+.player_inner {
     @apply bg-gradient-to-t from-[blue-gray-500] to-transparent
     rounded-2xl flex justify-between
 }
