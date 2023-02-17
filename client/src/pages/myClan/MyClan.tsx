@@ -12,7 +12,7 @@ const MyClan = () => {
   if (error) return <Error err={error} />;
 
   return (
-    <div>
+    <div className="bg-[#e9e9e1] p-3">
       <MyClanSubNavbar />
       <Outlet />
     </div>
