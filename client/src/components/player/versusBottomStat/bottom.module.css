@@ -1,0 +1,3 @@
+.bottom_panel {
+    @apply flex justify-end items-center bg-[#494c79] text-white rounded-b-[16px] py-1 px-2 mt-5
+}

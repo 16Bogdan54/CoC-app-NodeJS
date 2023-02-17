@@ -2,12 +2,14 @@ import React from "react";
 import { useQueryCache } from "@/hooks/useQueryCache";
 import { Player } from "clashofclans.js";
 
+import style from "./bottom.module.css";
+
 const VersusBottomStat = () => {
   const player = useQueryCache<Player>("playerData");
 
   return (
-    <div>
-      <h1>Versus Battle Wins:</h1>
+    <div className={style.bottom_panel}>
+      <span className="mr-2">Versus Battle Wins:</span>
       <span>{player.versusBattleWins}</span>
     </div>
   );
