@@ -9,7 +9,6 @@ const BuilderBasePlayer = () => {
       <PlayerVersus />
       <hr />
       <BuilderBaseTroops />
-      <BuilderBaseHeroes />
       <hr />
       <Achievements />
     </div>
