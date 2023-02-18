@@ -1,4 +1,4 @@
-import React from "react";
+import ClanStatItem from "@/components/clanStatItem/ClanStatItem";
 import { useQueryCache } from "@/hooks/useQueryCache";
 import { Clan } from "clashofclans.js";
 
@@ -6,23 +6,32 @@ const ClanStat = () => {
   const clan = useQueryCache<Clan>("clanData");
 
   return (
-    <div>
-      <h1>Clan War League</h1>
-      <span>{clan.warLeague?.name}</span>
-      <h1>Total points</h1>
-      <span>{clan.points}</span>
-      <span className="mx-2">{clan.versusPoints}</span>
-      <h1>Clan Location:</h1>
-      <span>{clan.location?.name}</span>
-      <h1>Chat Language:</h1>
-      <span>{clan.chatLanguage?.name}</span>
-      <h1>Type:</h1>
-      <span>{clan.type}</span>
-      <h1>Required trophies:</h1>
-      <span>{clan.requiredTrophies}</span>
-      <span className="mx-2">{clan.requiredVersusTrophies}</span>
-      <h1>Required Town Hall level:</h1>
-      <span>{clan.requiredTownHallLevel}</span>
+    <div className="p-4">
+      <ClanStatItem heading="Clan War League">
+        <span>{clan.warLeague?.name}</span>
+      </ClanStatItem>
+      <ClanStatItem heading="Total points">
+        <span>🏆{clan.points}</span>
+        <span>🏆{clan.versusPoints}</span>
+      </ClanStatItem>
+      <ClanStatItem heading="Clan Location">
+        <span>{clan.location?.name}</span>
+      </ClanStatItem>
+      <ClanStatItem heading="Chat Language">
+        <span>{clan.chatLanguage?.name}</span>
+      </ClanStatItem>
+      <ClanStatItem heading="Type">
+        <span>{clan.type}</span>
+      </ClanStatItem>
+      <ClanStatItem heading="Required trophies">
+        <span>{clan.requiredTrophies}</span>
+      </ClanStatItem>
+      <ClanStatItem heading="Required trophies">
+        <span>{clan.requiredTrophies}</span>
+      </ClanStatItem>
+      <ClanStatItem heading="Required Town Hall level">
+        <span>{clan.requiredTownHallLevel}</span>
+      </ClanStatItem>
     </div>
   );
 };
