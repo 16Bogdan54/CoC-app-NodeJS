@@ -6,7 +6,7 @@ import MembersHomeVillage from "@/components/membersHomeVillage/MembersHomeVilla
 const HomeVillageClan = () => {
   return (
     <>
-      <div className="bg-[#7d7e66] grid grid-cols-2">
+      <div className="bg-[#7d7e66] grid grid-cols-2 p-2 rounded-lg">
         <ClanDescription />
         <ClanStat />
       </div>
