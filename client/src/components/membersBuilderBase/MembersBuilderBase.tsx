@@ -11,11 +11,11 @@ const MembersBuilderBase = () => {
           className="flex items-center justify-between gap-6 p-3 bg-[#d5d8cc] m-2 rounded-lg"
           key={index}
         >
-          <h1>{member.clanRank}.</h1>
-          <h1>{member.expLevel}</h1>
+          <span>{member.clanRank}.</span>
+          <span>{member.expLevel}</span>
           <div className="flex-1">
-            <h1>{member.name}</h1>
-            <h1>{member.role}</h1>
+            <h3>{member.name}</h3>
+            <span>{member.role}</span>
           </div>
           <span className="">{member.versusTrophies}🏆</span>
         </div>
