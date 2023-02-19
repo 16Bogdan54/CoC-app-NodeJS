@@ -5,11 +5,13 @@ import MembersBuilderBase from "@/components/membersBuilderBase/MembersBuilderBa
 
 const BuilderBaseClan = () => {
   return (
-    <div>
-      <ClanDescription />
-      <ClanStat />
+    <>
+      <div className="bg-[#7d7e66] grid grid-cols-2 p-2 rounded-lg">
+        <ClanDescription />
+        <ClanStat />
+      </div>
       <MembersBuilderBase />
-    </div>
+    </>
   );
 };
 
