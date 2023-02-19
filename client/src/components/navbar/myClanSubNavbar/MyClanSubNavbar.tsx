@@ -1,18 +1,11 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import NavButton from "@/components/navbar/navButton/NavButton";
 
 const MyClanSubNavbar = () => {
   return (
-    <div>
-      <NavLink className="mx-2.5" to="/my-clan">
-        Home Village
-      </NavLink>
-      <NavLink className="mx-2.5" to="/my-clan/builder-base-clan">
-        Builder Base
-      </NavLink>
-      <NavLink className="mx-2.5" to="/my-clan/capital-clan">
-        Clan Capital
-      </NavLink>
+    <div className="flex justify-evenly">
+      <NavButton to="/my-clan">Home Village</NavButton>
+      <NavButton to="/my-clan/builder-base-clan">Builder Base</NavButton>
+      <NavButton to="/my-clan/capital-clan">Clan Capital</NavButton>
     </div>
   );
 };

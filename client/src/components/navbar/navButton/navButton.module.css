@@ -1,7 +1,7 @@
 .navButton {
-    @apply bg-[#847b72] px-2 py-1 text-xl text-white border-solid border-2 border-[#918d84] rounded-lg
+    @apply bg-[#847b72] px-10 py-1 text-xl text-white border-solid border-2 border-[#918d84] rounded-lg
 }
 
 .navButton_active {
-    @apply bg-[#bbb7ab] px-2 py-1 text-xl text-white border-solid border-2 border-[#918d84] rounded-lg
+    @apply bg-[#bbb7ab] px-10 py-1 text-xl text-white border-solid border-2 border-[#918d84] rounded-lg
 }

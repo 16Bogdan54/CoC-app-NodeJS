@@ -1,5 +1,3 @@
-import React from "react";
-// import { NavLink } from "react-router-dom";
 import NavButton from "@/components/navbar/navButton/NavButton";
 
 const MyProfileSubNavbar = () => {
