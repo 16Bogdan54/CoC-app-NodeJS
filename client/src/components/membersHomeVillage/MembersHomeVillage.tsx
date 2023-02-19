@@ -11,7 +11,7 @@ const MembersHomeVillage = () => {
           className="flex items-center justify-between gap-6 p-3 bg-[#d5d8cc] m-2 rounded-lg"
           key={index}
         >
-          <span>{member.clanRank}</span>
+          <span>{member.clanRank}.</span>
           <img width={40} src={member.league.icon.url} alt="league" />
           <div className="flex-1">
             <h3>{member.name}</h3>
