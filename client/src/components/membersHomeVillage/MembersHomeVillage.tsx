@@ -7,16 +7,25 @@ const MembersHomeVillage = () => {
   return (
     <div>
       {clan.members.map((member, index) => (
-        <div key={index}>
-          <h1>{member.clanRank}</h1>
-          <img width={30} src={member.league.icon.url} alt="league" />
-          <h1>{member.name}</h1>
-          <h1>{member.role}</h1>
-          <h1>Troops donated:</h1>
-          <span>{member.donations}</span>
-          <h1>Troops received:</h1>
-          <span>{member.received}</span>
-          <h1>{member.trophies}</h1>
+        <div
+          className="flex items-center justify-between gap-6 p-3 bg-[#d5d8cc] m-2 rounded-lg"
+          key={index}
+        >
+          <span>{member.clanRank}</span>
+          <img width={40} src={member.league.icon.url} alt="league" />
+          <div className="flex-1">
+            <h3>{member.name}</h3>
+            <span>{member.role}</span>
+          </div>
+          <div>
+            <h3>Troops donated:</h3>
+            <span>{member.donations}</span>
+          </div>
+          <div>
+            <h3>Troops received:</h3>
+            <span>{member.received}</span>
+          </div>
+          <span>{member.trophies}🏆</span>
         </div>
       ))}
     </div>
