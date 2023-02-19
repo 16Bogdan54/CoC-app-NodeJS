@@ -5,11 +5,13 @@ import MembersHomeVillage from "@/components/membersHomeVillage/MembersHomeVilla
 
 const MyClanCapital = () => {
   return (
-    <div>
-      <ClanDescription />
-      <ClanCapitalStat />
+    <>
+      <div className="bg-[#7d7e66] grid grid-cols-2 p-2 rounded-lg">
+        <ClanDescription />
+        <ClanCapitalStat />
+      </div>
       <MembersHomeVillage />
-    </div>
+    </>
   );
 };
 
