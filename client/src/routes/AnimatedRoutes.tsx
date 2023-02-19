@@ -37,8 +37,8 @@ const AnimatedRoutes = () => {
     <AnimatePresence>
       <Suspense fallback={<Loader />}>
         <Routes>
-          <Route path="/my-profile" element={<MyProfile />}>
-            <Route path="/my-profile" element={<HomeVillagePlayer />} />
+          <Route path="/" element={<MyProfile />}>
+            <Route path="/" element={<HomeVillagePlayer />} />
             <Route
               path="/my-profile/builder-base-profile"
               element={<BuilderBasePlayer />}
@@ -48,15 +48,14 @@ const AnimatedRoutes = () => {
               element={<ClanCapitalPlayer />}
             />
           </Route>
-          <Route path="/my-clan" element={<MyClan />}>
-            <Route path="/my-clan" element={<HomeVillageClan />} />
+          <Route path="/my-clan/" element={<MyClan />}>
+            <Route path="/my-clan/" element={<HomeVillageClan />} />
             <Route
               path="/my-clan/builder-base-clan"
               element={<BuilderBaseClan />}
             />
             <Route path="/my-clan/capital-clan" element={<MyClanCapital />} />
           </Route>
-          {/*</Route>*/}
           <Route path="/clans" element={<Clans />} />
           <Route path="/profiles" element={<Profiles />} />
         </Routes>
