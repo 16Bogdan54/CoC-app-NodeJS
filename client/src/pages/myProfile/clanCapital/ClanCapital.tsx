@@ -1,14 +1,18 @@
-import React from "react";
 import PlayerClanCapital from "@/components/player/PlayerClanCapital";
 import Achievements from "@/components/achievements/Achievements";
+import { motion } from "framer-motion";
 
 const ClanCapital = () => {
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <PlayerClanCapital />
       <hr />
       <Achievements />
-    </div>
+    </motion.div>
   );
 };
 

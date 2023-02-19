@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import { usePlayerFetch } from "@/hooks/usePlayerFetch";
 import Loader from "@/components/loader/Loader";
 import Error from "@/components/error/Error";
+import { motion } from "framer-motion";
 
 const MyProfile = () => {
   const [status, error] = usePlayerFetch();
@@ -11,10 +12,15 @@ const MyProfile = () => {
   if (error) return <Error err={error} />;
 
   return (
-    <div className="bg-[#e9e9e1] p-3">
+    <motion.div
+      className="bg-[#e9e9e1] p-3"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <MyProfileSubNavbar />
       <Outlet />
-    </div>
+    </motion.div>
   );
 };
 
