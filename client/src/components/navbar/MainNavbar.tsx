@@ -1,22 +1,43 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
+
+import style from "./styles/navbar.module.css";
 
 const MainNavbar = () => {
   return (
-    <div>
-      <NavLink className="mx-2.5" to="/">
+    <nav className={style.navbar}>
+      <NavLink
+        className={({ isActive }) =>
+          isActive ? style.navlink_active : style.navlink
+        }
+        to="/"
+      >
         My Profile
       </NavLink>
-      <NavLink className="mx-2.5" to="/my-clan/">
+      <NavLink
+        className={({ isActive }) =>
+          isActive ? style.navlink_active : style.navlink
+        }
+        to="/my-clan/"
+      >
         My Clan
       </NavLink>
-      <NavLink className="mx-2.5" to="/clans">
+      <NavLink
+        className={({ isActive }) =>
+          isActive ? style.navlink_active : style.navlink
+        }
+        to="/clans"
+      >
         Clans
       </NavLink>
-      <NavLink className="mx-2.5" to="/profiles">
+      <NavLink
+        className={({ isActive }) =>
+          isActive ? style.navlink_active : style.navlink
+        }
+        to="/profiles"
+      >
         Profiles
       </NavLink>
-    </div>
+    </nav>
   );
 };
 

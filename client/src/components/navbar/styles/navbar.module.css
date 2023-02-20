@@ -1,0 +1,11 @@
+.navbar {
+    @apply flex justify-evenly
+}
+
+.navlink {
+    @apply bg-[#847b72] px-8 py-2 text-xl text-white border-solid border-2 border-[#918d84] rounded-t-lg mt-2 hover:bg-[#bbb7ab] transition-all ease-in-out delay-100
+}
+
+.navlink_active {
+    @apply bg-[#bbb7ab] px-8 py-2 text-xl text-white border-solid border-2 border-[#918d84] rounded-t-lg mt-2
+}
