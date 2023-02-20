@@ -21,15 +21,23 @@ const client = new Client({
   restRequestTimeout: 5000,
 });
 
-// player
 app.get("/player", async (req, res) => {
   const player = await client.getPlayer("Q8JCCGUP");
   res.json(player);
 });
 
-// clan
 app.get("/clan", async (req, res) => {
   const player = await client.getClan("8PCORQUU");
+  res.json(player);
+});
+
+app.get("/clan-search/:tag", async (req, res) => {
+  const player = await client.getClan(req.params.tag);
+  res.json(player);
+});
+
+app.get("/player-search/:tag", async (req, res) => {
+  const player = await client.getPlayer(req.params.tag);
   res.json(player);
 });
 
