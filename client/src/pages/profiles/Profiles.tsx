@@ -1,7 +1,12 @@
 import { Button, TextField } from "@mui/material";
 import { motion } from "framer-motion";
+import { useRef } from "react";
+
+import { validate } from "@/validation/formValidation";
 
 const Profiles = () => {
+  const field = useRef<HTMLInputElement>(null);
+
   return (
     <motion.div
       className="bg-[#e9e9e1] p-3 min-h-[95vh]"
@@ -9,8 +14,24 @@ const Profiles = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <TextField id="outlined-basic" label="Player Tag" variant="outlined" />
-      <Button variant="contained" size="large">
+      <TextField
+        ref={field}
+        id="outlined-basic"
+        label="Player Tag"
+        variant="outlined"
+        onChange={(e) => {
+          if (field.current) {
+            field.current.value = e.target.value;
+          }
+        }}
+      />
+      <Button
+        variant="contained"
+        size="large"
+        onClick={() => {
+          if (field.current) validate(field.current.value);
+        }}
+      >
         Search
       </Button>
     </motion.div>
