@@ -3,9 +3,21 @@ import { Button, TextField } from "@mui/material";
 import { useRef } from "react";
 
 import { validate } from "@/validation/formValidation";
+import { useClanFetch } from "@/hooks/useClanFetch";
+import Loader from "@/components/loader/Loader";
+import Error from "@/components/error/Error";
+import { unknown } from "zod";
 
 const Clans = () => {
   const field = useRef<HTMLInputElement>(null);
+
+  const [status, error] = useClanFetch(
+    `/player-search/${field.current && field.current.value}`,
+    "searchClanData"
+  );
+
+  if (status === "loading") return <Loader />;
+  if (error) return <Error err={error} />;
 
   return (
     <motion.div

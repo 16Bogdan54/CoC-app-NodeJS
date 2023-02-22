@@ -6,7 +6,10 @@ import { Outlet } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const MyClan = () => {
-  const [status, error] = useClanFetch("http://localhost:3001/clan");
+  const [status, error] = useClanFetch(
+    "http://localhost:3001/clan",
+    "clanData"
+  );
 
   if (status === "loading") return <Loader />;
   if (error) return <Error err={error} />;
