@@ -1,8 +1,8 @@
 import axios from "axios";
 
-export const getData = () => {
+export const getData = (url: string) => {
   return axios
-    .get("http://localhost:3001/player")
+    .get(url)
     .then((r) => r.data)
     .catch((err) => alert(JSON.stringify(err)));
 };
