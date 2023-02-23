@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button, TextField } from "@mui/material";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 import { validate } from "@/validation/formValidation";
 import { useClanFetch } from "@/hooks/useClanFetch";
@@ -9,10 +9,13 @@ import Error from "@/components/error/Error";
 import { unknown } from "zod";
 
 const Clans = () => {
+  const DEFAULT_TAG: string = "8PCORQUU";
+
+  const [url, setUrl] = useState<string>(() => DEFAULT_TAG);
   const field = useRef<string>("");
 
   const [status, error] = useClanFetch(
-    `/player-search/${field.current}`,
+    `http://localhost:3001/clan-search/${url}`,
     "searchClanData"
   );
 
@@ -31,9 +34,7 @@ const Clans = () => {
         label="Clan Tag"
         variant="outlined"
         onChange={(e) => {
-          if (field.current) {
-            field.current = e.target.value;
-          }
+          field.current = e.target.value;
         }}
       />
 
@@ -41,7 +42,9 @@ const Clans = () => {
         variant="contained"
         size="large"
         onClick={() => {
-          if (field.current) validate(field.current);
+          if (validate(field.current)) {
+            setUrl(field.current);
+          }
         }}
       >
         Search

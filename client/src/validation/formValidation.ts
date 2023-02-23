@@ -1,8 +1,11 @@
 import { z } from "zod";
 
-export const validate = (value: string) => {
+export const validate = (value: string): boolean => {
   const tagSchema = z.string().length(8);
 
   const res = tagSchema.safeParse(value);
-  res.success ? console.log(res.success) : alert(res.error.format()._errors[0]);
+
+  if (!res.success) alert(res.error.format()._errors[0]);
+
+  return true;
 };

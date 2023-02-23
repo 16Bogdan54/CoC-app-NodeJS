@@ -4,5 +4,5 @@ export const getData = (url: string) => {
   return axios
     .get(url)
     .then((r) => r.data)
-    .catch((err) => alert(JSON.stringify(err)));
+    .catch((err) => console.log(JSON.stringify(err)));
 };

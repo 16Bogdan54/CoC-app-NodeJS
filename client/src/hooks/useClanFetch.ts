@@ -4,13 +4,13 @@ import { getData } from "@/hooks/utils";
 
 type clanData = [string, unknown, Clan];
 
-export const useClanFetch = (url: string, querykey: string): clanData => {
+export const useClanFetch = (url: string, queryKey: string): clanData => {
   const {
     status,
     error,
     data: clan,
   } = useQuery<Clan>({
-    queryKey: [querykey],
+    queryKey: [queryKey],
     queryFn: () => getData(url),
   });
 

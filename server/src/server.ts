@@ -32,13 +32,9 @@ app.get("/clan", async (req, res) => {
 });
 
 app.get("/clan-search/:tag", async (req, res) => {
-  const player = await client.getClan(req.params.tag);
-  res.json(player);
-});
-
-app.get("/player-search/:tag", async (req, res) => {
-  const player = await client.getPlayer(req.params.tag);
-  res.json(player);
+  console.log(req.params.tag);
+  const clan = await client.getClan(req.body.tag);
+  res.json(clan);
 });
 
 app.listen(port);
