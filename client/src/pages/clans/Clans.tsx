@@ -9,10 +9,10 @@ import Error from "@/components/error/Error";
 import { unknown } from "zod";
 
 const Clans = () => {
-  const field = useRef<HTMLInputElement>(null);
+  const field = useRef<string>("");
 
   const [status, error] = useClanFetch(
-    `/player-search/${field.current && field.current.value}`,
+    `/player-search/${field.current}`,
     "searchClanData"
   );
 
@@ -27,13 +27,12 @@ const Clans = () => {
       exit={{ opacity: 0 }}
     >
       <TextField
-        ref={field}
         id="outlined-basic"
         label="Clan Tag"
         variant="outlined"
         onChange={(e) => {
           if (field.current) {
-            field.current.value = e.target.value;
+            field.current = e.target.value;
           }
         }}
       />
@@ -42,7 +41,7 @@ const Clans = () => {
         variant="contained"
         size="large"
         onClick={() => {
-          if (field.current) validate(field.current.value);
+          if (field.current) validate(field.current);
         }}
       >
         Search
