@@ -10,7 +10,7 @@ export const useClanFetch = (url: string, queryKey: string): clanData => {
     error,
     data: clan,
   } = useQuery<Clan>({
-    queryKey: [`${queryKey + url}`],
+    queryKey: [queryKey],
     queryFn: () => getData(url),
   });
 
