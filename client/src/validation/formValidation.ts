@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const validate = (value: string): boolean => {
-  const tagSchema = z.string().length(8);
+  const tagSchema = z.string().min(8);
 
   const res = tagSchema.safeParse(value);
 

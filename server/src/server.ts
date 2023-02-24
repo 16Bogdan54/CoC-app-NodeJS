@@ -20,7 +20,7 @@ const client = new Client({
   retryLimit: 2,
   restRequestTimeout: 5000,
 });
-
+// Q8JCCGUP
 app.get("/player", async (req, res) => {
   const player = await client.getPlayer("Q8JCCGUP");
   res.json(player);
@@ -31,9 +31,9 @@ app.get("/clan", async (req, res) => {
   res.json(player);
 });
 
-app.get("/clan-search/:tag", async (req, res) => {
+app.get("/clans/clan-search/:tag", async (req, res) => {
   console.log(req.params.tag);
-  const clan = await client.getClan(req.body.tag);
+  const clan = await client.getClan(req.params.tag);
   res.json(clan);
 });
 

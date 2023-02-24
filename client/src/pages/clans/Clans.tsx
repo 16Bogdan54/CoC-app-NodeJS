@@ -1,23 +1,26 @@
 import { motion } from "framer-motion";
 import { Button, TextField } from "@mui/material";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { validate } from "@/validation/formValidation";
 import { useClanFetch } from "@/hooks/useClanFetch";
 import Loader from "@/components/loader/Loader";
 import Error from "@/components/error/Error";
-import { unknown } from "zod";
 
 const Clans = () => {
   const DEFAULT_TAG: string = "8PCORQUU";
 
-  const [url, setUrl] = useState<string>(() => DEFAULT_TAG);
+  const [tag, setTag] = useState<string>(() => DEFAULT_TAG);
   const field = useRef<string>("");
 
   const [status, error] = useClanFetch(
-    `http://localhost:3001/clan-search/${url}`,
+    `http://localhost:3001/clans/clan-search/${tag}`,
     "searchClanData"
   );
+
+  useEffect(() => {
+    console.count("hi");
+  }, [tag]);
 
   if (status === "loading") return <Loader />;
   if (error) return <Error err={error} />;
@@ -43,7 +46,8 @@ const Clans = () => {
         size="large"
         onClick={() => {
           if (validate(field.current)) {
-            setUrl(field.current);
+            console.log(field.current);
+            setTag(field.current);
           }
         }}
       >
