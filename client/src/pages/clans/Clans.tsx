@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
 import { Button, TextField } from "@mui/material";
-import { useEffect, useRef, useState } from "react";
-
+import { useRef, useState } from "react";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { validate } from "@/validation/formValidation";
 import { useClanFetch } from "@/hooks/useClanFetch";
 import Loader from "@/components/loader/Loader";
 import Error from "@/components/error/Error";
+import axios from "axios";
+import SearchPlayer from "@/components/searchClan/SearchPlayer";
 
 const Clans = () => {
   const DEFAULT_TAG: string = "8PCORQUU";
@@ -15,12 +17,20 @@ const Clans = () => {
 
   const [status, error] = useClanFetch(
     `http://localhost:3001/clans/clan-search/${tag}`,
-    "searchClanData"
+    "searchClan"
   );
 
-  useEffect(() => {
-    console.count("hi");
-  }, [tag]);
+  const queryClient = useQueryClient();
+
+  const mutation = useMutation({
+    mutationFn: (tag: string) => {
+      return axios.get(`http://localhost:3001/clans/clan-search/${tag}`);
+    },
+    onSuccess: (data) => {
+      queryClient.setQueryData(["searchClan"], data);
+      setTag(field.current);
+    },
+  });
 
   if (status === "loading") return <Loader />;
   if (error) return <Error err={error} />;
@@ -46,13 +56,15 @@ const Clans = () => {
         size="large"
         onClick={() => {
           if (validate(field.current)) {
-            console.log(field.current);
+            // setTag(field.current);
             setTag(field.current);
+            mutation.mutate(field.current);
           }
         }}
       >
         Search
       </Button>
+      <SearchPlayer />
     </motion.div>
   );
 };
