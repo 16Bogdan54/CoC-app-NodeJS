@@ -7,7 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 
 const queryClient = new QueryClient({
-  defaultOptions: { queries: { staleTime: 100 } },
+  defaultOptions: { queries: { staleTime: 1000 * 60 * 5 } },
 });
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
