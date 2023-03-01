@@ -3,9 +3,6 @@ import { Button, TextField } from "@mui/material";
 import { useRef, useState } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { validate } from "@/validation/formValidation";
-import { useClanFetch } from "@/hooks/useClanFetch";
-import Loader from "@/components/loader/Loader";
-import Error from "@/components/error/Error";
 import axios from "axios";
 import SearchPlayer from "@/components/searchClan/SearchPlayer";
 
@@ -14,11 +11,7 @@ const Clans = () => {
 
   const [tag, setTag] = useState<string>(() => DEFAULT_TAG);
   const field = useRef<string>("");
-
-  const [status, error] = useClanFetch(
-    `http://localhost:3001/clans/clan-search/${tag}`,
-    "searchClan"
-  );
+  const buttonRef = useRef<HTMLButtonElement | null>(null);
 
   const queryClient = useQueryClient();
 
@@ -28,12 +21,9 @@ const Clans = () => {
     },
     onSuccess: (data) => {
       queryClient.setQueryData(["searchClan"], data);
-      setTag(field.current);
+      queryClient.invalidateQueries(["searchClan"]);
     },
   });
-
-  if (status === "loading") return <Loader />;
-  if (error) return <Error err={error} />;
 
   return (
     <motion.div
@@ -52,11 +42,12 @@ const Clans = () => {
       />
 
       <Button
+        ref={buttonRef}
         variant="contained"
         size="large"
-        onClick={() => {
+        onClick={(e) => {
           if (validate(field.current)) {
-            // setTag(field.current);
+            e.preventDefault();
             setTag(field.current);
             mutation.mutate(field.current);
           }
@@ -64,7 +55,7 @@ const Clans = () => {
       >
         Search
       </Button>
-      <SearchPlayer />
+      <SearchPlayer tag={tag} />
     </motion.div>
   );
 };
