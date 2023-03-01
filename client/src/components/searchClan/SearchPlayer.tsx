@@ -3,15 +3,11 @@ import React from "react";
 import { useClanFetch } from "@/hooks/useClanFetch";
 import Loader from "@/components/loader/Loader";
 import Error from "@/components/error/Error";
+import { useQueryClient } from "@tanstack/react-query";
+import { Clan } from "clashofclans.js";
 
-const SearchPlayer = ({ tag }: { tag: string }) => {
-  const [status, error, clan] = useClanFetch(
-    `http://localhost:3001/clans/clan-search/${tag}`,
-    "searchClan"
-  );
-
-  if (status === "loading") return <Loader />;
-  if (error) return <Error err={error} />;
+const SearchPlayer = ({ clan }: { clan: Clan }) => {
+  const queryClient = useQueryClient();
 
   return (
     <div>

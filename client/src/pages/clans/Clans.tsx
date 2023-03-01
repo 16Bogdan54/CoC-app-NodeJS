@@ -1,17 +1,19 @@
 import { motion } from "framer-motion";
 import { Button, TextField } from "@mui/material";
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { validate } from "@/validation/formValidation";
 import axios from "axios";
 import SearchPlayer from "@/components/searchClan/SearchPlayer";
+import { useClanFetch } from "@/hooks/useClanFetch";
+import Loader from "@/components/loader/Loader";
+import Error from "@/components/error/Error";
 
 const Clans = () => {
   const DEFAULT_TAG: string = "8PCORQUU";
-
-  const [tag, setTag] = useState<string>(() => DEFAULT_TAG);
-  const field = useRef<string>("");
-  const buttonRef = useRef<HTMLButtonElement | null>(null);
+  //
+  // const [tag, setTag] = useState<string>(() => DEFAULT_TAG);
+  const field = useRef<string>(DEFAULT_TAG);
 
   const queryClient = useQueryClient();
 
@@ -21,9 +23,17 @@ const Clans = () => {
     },
     onSuccess: (data) => {
       queryClient.setQueryData(["searchClan"], data);
-      queryClient.invalidateQueries(["searchClan"]);
+      // queryClient.invalidateQueries(["searchClan"]);
     },
   });
+
+  const [status, error, clan] = useClanFetch(
+    `http://localhost:3001/clans/clan-search/${field.current}`,
+    "searchClan"
+  );
+
+  if (status === "loading") return <Loader />;
+  if (error) return <Error err={error} />;
 
   return (
     <motion.div
@@ -42,20 +52,20 @@ const Clans = () => {
       />
 
       <Button
-        ref={buttonRef}
         variant="contained"
         size="large"
+        disabled={mutation.isLoading}
         onClick={(e) => {
           if (validate(field.current)) {
             e.preventDefault();
-            setTag(field.current);
+            // setTag(field.current);
             mutation.mutate(field.current);
           }
         }}
       >
-        Search
+        {mutation.isLoading ? "Loading..." : "Search"}
       </Button>
-      <SearchPlayer tag={tag} />
+      <SearchPlayer clan={clan} />
     </motion.div>
   );
 };
