@@ -1,13 +1,10 @@
 import { motion } from "framer-motion";
 import { Button, TextField } from "@mui/material";
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { validate } from "@/validation/formValidation";
 import axios from "axios";
-import SearchPlayer from "@/components/searchClan/SearchPlayer";
-import { useClanFetch } from "@/hooks/useClanFetch";
-import Loader from "@/components/loader/Loader";
-import Error from "@/components/error/Error";
+import SearchClan from "@/components/searchClan/SearchClan";
 
 const Clans = () => {
   const DEFAULT_TAG: string = "8PCORQUU";
@@ -46,15 +43,13 @@ const Clans = () => {
         disabled={mutation.isLoading}
         onClick={(e) => {
           if (validate(field.current)) {
-            e.preventDefault();
-            // setTag(field.current);
             mutation.mutate(field.current);
           }
         }}
       >
         {mutation.isLoading ? "Loading..." : "Search"}
       </Button>
-      <SearchPlayer tag={field.current} />
+      <SearchClan tag={field.current} />
     </motion.div>
   );
 };
