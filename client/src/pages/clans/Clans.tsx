@@ -11,8 +11,6 @@ import Error from "@/components/error/Error";
 
 const Clans = () => {
   const DEFAULT_TAG: string = "8PCORQUU";
-  //
-  // const [tag, setTag] = useState<string>(() => DEFAULT_TAG);
   const field = useRef<string>(DEFAULT_TAG);
 
   const queryClient = useQueryClient();
@@ -21,19 +19,10 @@ const Clans = () => {
     mutationFn: (tag: string) => {
       return axios.get(`http://localhost:3001/clans/clan-search/${tag}`);
     },
-    onSuccess: (data) => {
-      queryClient.setQueryData(["searchClan"], data);
-      // queryClient.invalidateQueries(["searchClan"]);
+    onSuccess: (res) => {
+      queryClient.setQueryData(["searchClan"], res.data);
     },
   });
-
-  const [status, error, clan] = useClanFetch(
-    `http://localhost:3001/clans/clan-search/${field.current}`,
-    "searchClan"
-  );
-
-  if (status === "loading") return <Loader />;
-  if (error) return <Error err={error} />;
 
   return (
     <motion.div
@@ -65,7 +54,7 @@ const Clans = () => {
       >
         {mutation.isLoading ? "Loading..." : "Search"}
       </Button>
-      <SearchPlayer clan={clan} />
+      <SearchPlayer tag={field.current} />
     </motion.div>
   );
 };

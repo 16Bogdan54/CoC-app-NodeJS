@@ -6,12 +6,22 @@ import Error from "@/components/error/Error";
 import { useQueryClient } from "@tanstack/react-query";
 import { Clan } from "clashofclans.js";
 
-const SearchPlayer = ({ clan }: { clan: Clan }) => {
-  const queryClient = useQueryClient();
+type Props = {
+  tag: string;
+};
+
+const SearchPlayer = ({ tag }: Props) => {
+  const [status, error, clan] = useClanFetch(
+    `http://localhost:3001/clans/clan-search/${tag}`,
+    "searchClan"
+  );
+
+  if (status === "loading") return <Loader />;
+  if (error) return <Error err={error} />;
 
   return (
     <div>
-      {/*<img width={90} src={clan.badge.url} alt="clan badge" />*/}
+      <img width={90} src={clan.badge.url} alt="clan badge" />
       <Typography variant="h4"> {clan.name}</Typography>
       <Typography variant="h5">{clan.tag}</Typography>
       <Typography variant="body1">{clan.description}</Typography>
