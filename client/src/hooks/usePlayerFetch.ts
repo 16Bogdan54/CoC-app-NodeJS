@@ -4,13 +4,13 @@ import { getData } from "@/hooks/utils";
 
 type playerData = [string, unknown, Player];
 
-export const usePlayerFetch = (url: string): playerData => {
+export const usePlayerFetch = (url: string, queryKey: string): playerData => {
   const {
     status,
     error,
     data: player,
   } = useQuery<Player>({
-    queryKey: ["playerData"],
+    queryKey: [queryKey],
     queryFn: () => getData(url),
   });
 

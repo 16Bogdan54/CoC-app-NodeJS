@@ -3,8 +3,6 @@ import React from "react";
 import { usePlayerFetch } from "@/hooks/usePlayerFetch";
 import Loader from "@/components/loader/Loader";
 import Error from "@/components/error/Error";
-import ClanStatItem from "@/components/clanStatItem/ClanStatItem";
-import { useClanFetch } from "@/hooks/useClanFetch";
 
 type Props = {
   tag: string;
@@ -13,8 +11,11 @@ type Props = {
 const SearchPlayer = ({ tag }: Props) => {
   const [status, error, player] = usePlayerFetch(
     `http://localhost:3001/clans/clan-search/${tag}`,
-    "searchClan"
+    "playerSearch"
   );
+
+  if (status === "loading") return <Loader />;
+  if (error) return <Error err={error} />;
 
   return <div></div>;
 };
