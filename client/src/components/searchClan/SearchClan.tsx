@@ -4,6 +4,7 @@ import { useClanFetch } from "@/hooks/useClanFetch";
 import Loader from "@/components/loader/Loader";
 import Error from "@/components/error/Error";
 import ClanStatItem from "@/components/clanStatItem/ClanStatItem";
+
 type Props = {
   tag: string;
 };
