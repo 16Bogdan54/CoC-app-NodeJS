@@ -6,7 +6,10 @@ import Error from "@/components/error/Error";
 import { motion } from "framer-motion";
 
 const MyProfile = () => {
-  const [status, error] = usePlayerFetch("http://localhost:3001/player");
+  const [status, error] = usePlayerFetch(
+    "http://localhost:3001/player",
+    "playerData"
+  );
 
   if (status === "loading") return <Loader />;
   if (error) return <Error err={error} />;
