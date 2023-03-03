@@ -20,7 +20,7 @@ const client = new Client({
   retryLimit: 2,
   restRequestTimeout: 5000,
 });
-// Q8JCCGUP
+
 app.get("/player", async (req, res) => {
   const player = await client.getPlayer("Q8JCCGUP");
   res.json(player);
