@@ -3,9 +3,24 @@ import { motion } from "framer-motion";
 import { useRef } from "react";
 
 import { validate } from "@/validation/formValidation";
+import SearchPlayer from "@/components/searchPlayer/searchPlayer";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import axios from "axios";
 
 const Profiles = () => {
-  const field = useRef<HTMLInputElement>(null);
+  const DEFAULT_TAG: string = "Q8JCCGUP";
+  const field = useRef<string>(DEFAULT_TAG);
+
+  const queryClient = useQueryClient();
+
+  const mutation = useMutation({
+    mutationFn: (tag: string) => {
+      return axios.get(`http://localhost:3001/players/player-search/${tag}`);
+    },
+    onSuccess: (res) => {
+      queryClient.setQueryData(["playerSearch"], res.data);
+    },
+  });
 
   return (
     <motion.div
@@ -15,25 +30,26 @@ const Profiles = () => {
       exit={{ opacity: 0 }}
     >
       <TextField
-        ref={field}
         id="outlined-basic"
         label="Player Tag"
         variant="outlined"
         onChange={(e) => {
-          if (field.current) {
-            field.current.value = e.target.value;
-          }
+          field.current = e.target.value;
         }}
       />
       <Button
         variant="contained"
         size="large"
+        disabled={mutation.isLoading}
         onClick={() => {
-          if (field.current) validate(field.current.value);
+          if (validate(field.current)) {
+            mutation.mutate(field.current);
+          }
         }}
       >
-        Search
+        {mutation.isLoading ? "Loading..." : "Search"}
       </Button>
+      <SearchPlayer tag={field.current} />
     </motion.div>
   );
 };
