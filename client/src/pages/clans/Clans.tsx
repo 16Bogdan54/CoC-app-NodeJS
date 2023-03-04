@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Button, TextField } from "@mui/material";
+import { Box, Button, TextField } from "@mui/material";
 import React, { useRef } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { validate } from "@/validation/formValidation";
@@ -28,7 +28,10 @@ const Clans = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <div className="bg-white w-fit px-4 py-2 flex items-center justify-between gap-2 rounded-lg">
+      <Box
+        className="bg-white w-fit px-4 py-2 flex items-center justify-between gap-2 rounded-lg"
+        mt={10}
+      >
         <TextField
           id="outlined-basic"
           label="Clan Tag"
@@ -50,7 +53,7 @@ const Clans = () => {
         >
           {mutation.isLoading ? "Loading..." : "Search"}
         </Button>
-      </div>
+      </Box>
       <SearchClan tag={field.current} />
     </motion.div>
   );
