@@ -131,7 +131,7 @@ const MainNavbar = () => {
             >
               My Clan
             </NavLink>
-            <img src="/logo.svg" alt="logo" />
+            <img className="mx-5" src="/logo.svg" alt="logo" />
             <NavLink
               className={({ isActive }) =>
                 isActive ? style.navlink_active : style.navlink
