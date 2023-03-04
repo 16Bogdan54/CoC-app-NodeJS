@@ -4,6 +4,7 @@ import { usePlayerFetch } from "@/hooks/usePlayerFetch";
 import Loader from "@/components/loader/Loader";
 import Error from "@/components/error/Error";
 import { motion } from "framer-motion";
+import { Grid } from "@mui/material";
 
 const MyProfile = () => {
   const [status, error] = usePlayerFetch(
@@ -21,8 +22,14 @@ const MyProfile = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <MyProfileSubNavbar />
-      <Outlet />
+      <Grid container spacing={2} mt={8}>
+        <Grid item md={3}>
+          <MyProfileSubNavbar />
+        </Grid>
+        <Grid item md={9}>
+          <Outlet />
+        </Grid>
+      </Grid>
     </motion.div>
   );
 };
