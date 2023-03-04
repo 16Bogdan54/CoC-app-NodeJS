@@ -46,7 +46,7 @@ const Clans = () => {
           variant="contained"
           size="large"
           disabled={mutation.isLoading}
-          onClick={(e) => {
+          onClick={() => {
             if (validate(field.current)) {
               mutation.mutate(field.current);
             }
