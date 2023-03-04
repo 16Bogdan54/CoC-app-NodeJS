@@ -22,7 +22,7 @@ const MyClan = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <Grid container spacing={2}>
+      <Grid container spacing={2} mt={8}>
         <Grid item md={3}>
           <MyClanSubNavbar />
         </Grid>
