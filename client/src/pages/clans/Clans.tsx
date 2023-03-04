@@ -36,6 +36,7 @@ const Clans = () => {
           id="outlined-basic"
           label="Clan Tag"
           variant="outlined"
+          size="small"
           onChange={(e) => {
             field.current = e.target.value;
           }}
