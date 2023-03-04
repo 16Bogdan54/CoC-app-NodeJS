@@ -23,7 +23,7 @@ const Clans = () => {
 
   return (
     <motion.div
-      className="bg-[#e9e9e1] p-3 min-h-[95vh]"
+      className="p-3 min-h-[95vh]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}

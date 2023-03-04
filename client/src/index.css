@@ -4,7 +4,7 @@
 
 @layer base {
     html {
-        background-color: #5e5453;
+        background: linear-gradient(292.66deg, #00D2FF 0.3%, #3A7BD5 100%);
     }
     body::-webkit-scrollbar{
         background-color: transparent;
