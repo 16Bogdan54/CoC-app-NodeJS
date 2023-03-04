@@ -28,27 +28,29 @@ const Clans = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <TextField
-        id="outlined-basic"
-        label="Clan Tag"
-        variant="outlined"
-        onChange={(e) => {
-          field.current = e.target.value;
-        }}
-      />
+      <div className="bg-white w-fit px-4 py-2 flex items-center justify-between gap-2 rounded-lg">
+        <TextField
+          id="outlined-basic"
+          label="Clan Tag"
+          variant="outlined"
+          onChange={(e) => {
+            field.current = e.target.value;
+          }}
+        />
 
-      <Button
-        variant="contained"
-        size="large"
-        disabled={mutation.isLoading}
-        onClick={(e) => {
-          if (validate(field.current)) {
-            mutation.mutate(field.current);
-          }
-        }}
-      >
-        {mutation.isLoading ? "Loading..." : "Search"}
-      </Button>
+        <Button
+          variant="contained"
+          size="large"
+          disabled={mutation.isLoading}
+          onClick={(e) => {
+            if (validate(field.current)) {
+              mutation.mutate(field.current);
+            }
+          }}
+        >
+          {mutation.isLoading ? "Loading..." : "Search"}
+        </Button>
+      </div>
       <SearchClan tag={field.current} />
     </motion.div>
   );

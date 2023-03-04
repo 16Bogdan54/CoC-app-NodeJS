@@ -16,7 +16,7 @@ const MyClan = () => {
 
   return (
     <motion.div
-      className="bg-[#e9e9e1] p-3"
+      className="p-3"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}

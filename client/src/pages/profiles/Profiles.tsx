@@ -24,31 +24,34 @@ const Profiles = () => {
 
   return (
     <motion.div
-      className="bg-[#e9e9e1] p-3 min-h-[95vh]"
+      className="p-3 min-h-[95vh]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <TextField
-        id="outlined-basic"
-        label="Player Tag"
-        variant="outlined"
-        onChange={(e) => {
-          field.current = e.target.value;
-        }}
-      />
-      <Button
-        variant="contained"
-        size="large"
-        disabled={mutation.isLoading}
-        onClick={() => {
-          if (validate(field.current)) {
-            mutation.mutate(field.current);
-          }
-        }}
-      >
-        {mutation.isLoading ? "Loading..." : "Search"}
-      </Button>
+      <div className="bg-white w-fit px-4 py-2 flex items-center justify-between gap-2 rounded-lg">
+        <TextField
+          id="outlined-basic"
+          label="Player Tag"
+          variant="outlined"
+          size="small"
+          onChange={(e) => {
+            field.current = e.target.value;
+          }}
+        />
+        <Button
+          variant="contained"
+          size="large"
+          disabled={mutation.isLoading}
+          onClick={() => {
+            if (validate(field.current)) {
+              mutation.mutate(field.current);
+            }
+          }}
+        >
+          {mutation.isLoading ? "Loading..." : "Search"}
+        </Button>
+      </div>
       <SearchPlayer tag={field.current} />
     </motion.div>
   );
