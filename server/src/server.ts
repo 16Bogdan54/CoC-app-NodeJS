@@ -47,7 +47,7 @@ app.get("/players/player-search/:tag", async (req, res) => {
     player = await client.getPlayer(req.params.tag);
   } catch (err) {
     res.status(400).send(err.message);
-  } // const player = await client.getPlayer(req.params.tag);
+  }
   res.json(player);
 });
 
