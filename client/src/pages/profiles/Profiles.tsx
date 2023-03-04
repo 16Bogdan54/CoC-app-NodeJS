@@ -1,4 +1,4 @@
-import { Button, TextField } from "@mui/material";
+import { Box, Button, TextField } from "@mui/material";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 
@@ -29,7 +29,10 @@ const Profiles = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <div className="bg-white w-fit px-4 py-2 flex items-center justify-between gap-2 rounded-lg">
+      <Box
+        className="bg-white w-fit px-4 py-2 flex items-center justify-between gap-2 rounded-lg"
+        mt={10}
+      >
         <TextField
           id="outlined-basic"
           label="Player Tag"
@@ -51,7 +54,7 @@ const Profiles = () => {
         >
           {mutation.isLoading ? "Loading..." : "Search"}
         </Button>
-      </div>
+      </Box>
       <SearchPlayer tag={field.current} />
     </motion.div>
   );
