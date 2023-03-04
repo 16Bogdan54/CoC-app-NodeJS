@@ -4,6 +4,7 @@ import Error from "@/components/error/Error";
 import MyClanSubNavbar from "@/components/navbar/myClanSubNavbar/MyClanSubNavbar";
 import { Outlet } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Grid } from "@mui/material";
 
 const MyClan = () => {
   const [status, error] = useClanFetch(
@@ -21,8 +22,14 @@ const MyClan = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <MyClanSubNavbar />
-      <Outlet />
+      <Grid container spacing={2}>
+        <Grid item md={3}>
+          <MyClanSubNavbar />
+        </Grid>
+        <Grid item md={9}>
+          <Outlet />
+        </Grid>
+      </Grid>
     </motion.div>
   );
 };
