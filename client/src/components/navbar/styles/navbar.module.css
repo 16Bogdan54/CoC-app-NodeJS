@@ -1,11 +1,13 @@
 .navbar {
-    @apply flex justify-evenly
+    @apply flex items-center justify-evenly p-3
 }
 
+/*bg-[#847b72] px-8 py-2 text-xl text-white border-solid border-2 border-[#918d84] rounded-t-lg mt-2 hover:bg-[#bbb7ab] transition-all ease-in-out delay-100*/
+
 .navlink {
-    @apply bg-[#847b72] px-8 py-2 text-xl text-white border-solid border-2 border-[#918d84] rounded-t-lg mt-2 hover:bg-[#bbb7ab] transition-all ease-in-out delay-100
+    @apply text-xl text-white p-4  hover:text-[#F1D412] transition-all ease-in-out delay-100
 }
 
 .navlink_active {
-    @apply bg-[#bbb7ab] px-8 py-2 text-xl text-white border-solid border-2 border-[#918d84] rounded-t-lg mt-2
+    @apply text-xl text-[#F1D412] p-4
 }
