@@ -22,33 +22,43 @@ const client = new Client({
 });
 
 app.get("/player", async (req, res) => {
-  const player = await client.getPlayer("Q8JCCGUP");
-  res.json(player);
+  try {
+    const player = await client.getPlayer("Q8JCCGUP");
+    if (!player) res.status(404).json({ error: "PLayer not found" });
+    res.json(player);
+  } catch (err) {
+    res.status(500).json(err.message);
+  }
 });
 
 app.get("/clan", async (req, res) => {
-  const player = await client.getClan("8PCORQUU");
-  res.json(player);
+  try {
+    const clan = await client.getClan("8PCORQUU");
+    if (!clan) res.status(404).json({ error: "Clan not found" });
+    res.json(clan);
+  } catch (err) {
+    res.status(500).json(err.message);
+  }
 });
 
 app.get("/clans/clan-search/:tag", async (req, res) => {
-  let clan;
   try {
-    clan = await client.getClan(req.params.tag);
+    const clan = await client.getClan(req.params.tag);
+    if (!clan) res.status(404).json({ error: "Clan not found" });
+    res.json(clan);
   } catch (err) {
-    res.status(400).send(err.message);
+    res.status(500).json(err.message);
   }
-  res.json(clan);
 });
 
 app.get("/players/player-search/:tag", async (req, res) => {
-  let player;
   try {
-    player = await client.getPlayer(req.params.tag);
+    const player = await client.getPlayer(req.params.tag);
+    if (!player) res.status(404).json({ error: "PLayer not found" });
+    res.json(player);
   } catch (err) {
-    res.status(400).send(err.message);
+    res.status(500).json(err.message);
   }
-  res.json(player);
 });
 
 app.listen(port);
