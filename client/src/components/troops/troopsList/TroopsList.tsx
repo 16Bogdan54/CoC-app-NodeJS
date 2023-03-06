@@ -18,7 +18,7 @@ const TroopsList = () => {
             troop.unlockBuilding !== "Workshop"
           ) {
             return (
-              <Grid item>
+              <Grid item xs="auto">
                 <Unit
                   key={index}
                   picURL={getIconURL(troop.name)}
