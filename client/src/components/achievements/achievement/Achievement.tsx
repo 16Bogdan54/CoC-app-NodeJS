@@ -1,6 +1,13 @@
 import { renderStars } from "@/components/utils/utils";
 
 import style from "./achievement.module.css";
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Typography,
+} from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 type Props = {
   name: string;
@@ -10,14 +17,21 @@ type Props = {
 
 const Achievement = ({ name, info, stars }: Props) => {
   return (
-    <div className={style.achieve_container}>
-      <span className="text-xl">{renderStars(stars)}</span>
-      <div className="ml-2">
-        <h3 className="text-xl">{name}</h3>
-        <p className="text-xl">{info}</p>
-      </div>
-      <span className="ml-auto text-2xl">✅</span>
-    </div>
+    <Accordion sx={{ my: 0.5, background: "#3681D8" }}>
+      <AccordionSummary
+        expandIcon={<ExpandMoreIcon />}
+        aria-controls="panel1a-content"
+        id="panel1a-header"
+      >
+        <Typography>
+          {renderStars(stars)} {name}{" "}
+          <span className="ml-auto text-2xl">✅</span>
+        </Typography>
+      </AccordionSummary>
+      <AccordionDetails>
+        <Typography>{info}</Typography>
+      </AccordionDetails>
+    </Accordion>
   );
 };
 
