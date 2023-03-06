@@ -1,22 +1,27 @@
 import { getIconURL } from "@/components/utils/utils";
 import { useQueryCache } from "@/hooks/useQueryCache";
 import { Player } from "clashofclans.js";
+import { Box, Grid, Typography } from "@mui/material";
 import Unit from "@/components/troops/unit/Unit";
-
-import style from "@/components/troops/styles/units.module.css";
 
 const SpellList = () => {
   const player = useQueryCache<Player>("playerData");
 
   return (
-    <div className={style.units_outer}>
-      <h2 className={style.units_heading}>Spells</h2>
-      <div className={style.img_container}>
+    <Box className="text-white" p={2}>
+      <Typography variant="h5">Spells</Typography>
+      <Grid container spacing={2} py={1}>
         {player.spells.map((spell, index) => (
-          <Unit key={index} picURL={getIconURL(spell.name)} lvl={spell.level} />
+          <Grid item xs="auto">
+            <Unit
+              key={index}
+              picURL={getIconURL(spell.name)}
+              lvl={spell.level}
+            />
+          </Grid>
         ))}
-      </div>
-    </div>
+      </Grid>
+    </Box>
   );
 };
 
