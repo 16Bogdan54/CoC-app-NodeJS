@@ -1,3 +1,3 @@
 .bottom_panel {
-    @apply flex justify-between items-center py-1 px-2 mt-5 bg-[#3681D8] rounded-md
+    @apply bg-[#3681D8] rounded-md text-center
 }
