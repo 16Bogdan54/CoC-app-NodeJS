@@ -8,7 +8,7 @@ import { Grid } from "@mui/material";
 
 const PlayerHome = () => {
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={2} className="text-white">
       <Grid item xs={6} md={4}>
         <PlayerInfo />
       </Grid>

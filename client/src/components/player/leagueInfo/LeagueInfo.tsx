@@ -10,7 +10,7 @@ const LeagueInfo = () => {
   const player = useQueryCache<Player>("playerData");
 
   return (
-    <Stack justifyContent="center" alignItems="center" className="text-white">
+    <Stack justifyContent="center" alignItems="center">
       <Box className={style.league_block}>
         <img width={100} src={player.league.icon.url} alt="league icon" />
         <Box>
