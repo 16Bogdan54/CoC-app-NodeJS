@@ -4,6 +4,7 @@ import { useQueryCache } from "@/hooks/useQueryCache";
 import { Player } from "clashofclans.js";
 import Unit from "@/components/troops/unit/Unit";
 import BuilderBaseHeroes from "@/components/troops/builderBaseHeroes/BuilderBaseHeroes";
+import { Box, Grid, Stack, Typography } from "@mui/material";
 
 import style from "@/components/troops/styles/units.module.css";
 
@@ -11,9 +12,9 @@ const BuilderBaseTroops = () => {
   const player = useQueryCache<Player>("playerData");
 
   return (
-    <div className={style.units_outer}>
-      <h2 className={style.units_heading}>Troops</h2>
-      <div className={style.img_container}>
+    <Box className="text-white" p={2}>
+      <Typography variant="h5">Troops</Typography>
+      <Grid container spacing={1} py={1}>
         {player.troops.map((troop, index) => {
           if (
             troop.village === "builderBase" &&
@@ -21,17 +22,19 @@ const BuilderBaseTroops = () => {
             troop.unlockBuilding !== "Workshop"
           ) {
             return (
-              <Unit
-                key={index}
-                picURL={getIconURL(troop.name)}
-                lvl={troop.level}
-              />
+              <Grid item xs="auto">
+                <Unit
+                  key={index}
+                  picURL={getIconURL(troop.name)}
+                  lvl={troop.level}
+                />
+              </Grid>
             );
           }
         })}
-      </div>
+      </Grid>
       <BuilderBaseHeroes />
-    </div>
+    </Box>
   );
 };
 

@@ -5,14 +5,15 @@ import Unit from "@/components/troops/unit/Unit";
 
 import style from "@/components/troops/styles/units.module.css";
 import React from "react";
+import { Stack, Typography } from "@mui/material";
 
 const BuilderBaseHeroes = () => {
   const player = useQueryCache<Player>("playerData");
 
   return (
     <>
-      <h2 className={style.units_heading}>Heroes</h2>
-      <div className={style.img_container}>
+      <Typography variant="h5">Heroes</Typography>
+      <Stack direction="row" spacing={2} py={1}>
         {player.heroes.map((hero, index) => {
           if (hero.village === "builderBase") {
             return (
@@ -24,7 +25,7 @@ const BuilderBaseHeroes = () => {
             );
           }
         })}
-      </div>
+      </Stack>
     </>
   );
 };
