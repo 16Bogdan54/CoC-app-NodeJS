@@ -1,11 +1,14 @@
 import AnimatedRoutes from "./routes/AnimatedRoutes";
 import MainNavbar from "src/components/navbar/MainNavbar";
+import { Container } from "@mui/material";
 
 function App() {
   return (
     <div className="App">
       <MainNavbar />
-      <AnimatedRoutes />
+      <Container>
+        <AnimatedRoutes />
+      </Container>
     </div>
   );
 }

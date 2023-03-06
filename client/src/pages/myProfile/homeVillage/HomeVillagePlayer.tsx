@@ -11,9 +11,7 @@ const HomeVillagePlayer = () => {
       exit={{ opacity: 0 }}
     >
       <PlayerHome />
-      <hr />
       <Units />
-      <hr />
       <Achievements />
     </motion.div>
   );

@@ -4,17 +4,24 @@ import LeagueInfo from "@/components/player/leagueInfo/LeagueInfo";
 import BottomInfo from "@/components/player/bottomInfo/BottomInfo";
 
 import style from "./style/style.module.css";
+import { Grid } from "@mui/material";
 
 const PlayerHome = () => {
   return (
-    <div className={style.player_container}>
-      <div className={style.player_inner}>
+    <Grid container spacing={2}>
+      <Grid item xs={6} md={4}>
         <PlayerInfo />
+      </Grid>
+      <Grid item xs={6} md={4}>
         <ClanInfo />
+      </Grid>
+      <Grid item xs={12} md={4}>
         <LeagueInfo />
-      </div>
-      <BottomInfo />
-    </div>
+      </Grid>
+      <Grid item xs={12}>
+        <BottomInfo />
+      </Grid>
+    </Grid>
   );
 };
 

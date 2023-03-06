@@ -1,16 +1,20 @@
 import { useQueryCache } from "@/hooks/useQueryCache";
 import { Player } from "clashofclans.js";
 
-import style from "./clanInfo.module.css";
+import { Stack, Typography } from "@mui/material";
 
 const ClanInfo = () => {
   const player = useQueryCache<Player>("playerData");
 
   return (
-    <div className={style.clanInfo_container}>
-      <h2 className="text-2xl">{player.clan?.name}</h2>
+    <Stack
+      justifyContent="center"
+      alignItems="center"
+      sx={{ background: "red" }}
+    >
+      <Typography variant="h5">{player.clan?.name}</Typography>
       <img width={100} src={player.clan?.badge.url} alt="clan logo" />
-    </div>
+    </Stack>
   );
 };
 

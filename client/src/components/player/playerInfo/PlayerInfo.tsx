@@ -1,12 +1,17 @@
 import { useQueryCache } from "@/hooks/useQueryCache";
 import { Player } from "clashofclans.js";
 import style from "./player_info.module.css";
+import { Stack } from "@mui/material";
 
 const PlayerInfo = () => {
   const player = useQueryCache<Player>("playerData");
 
   return (
-    <div className="w-fit">
+    <Stack
+      justifyContent="center"
+      alignItems="center"
+      sx={{ background: "red" }}
+    >
       <div className="flex items-center">
         <div className={style.exp_lvl}>{player.expLevel}</div>
         <div>
@@ -17,10 +22,16 @@ const PlayerInfo = () => {
       </div>
       <div className={style.labels_block}>
         {player.labels.map((label, index) => (
-          <img width={30} key={index} src={label.icon.url} alt="label" />
+          <img
+            className="mx-2"
+            width={35}
+            key={index}
+            src={label.icon.url}
+            alt="label"
+          />
         ))}
       </div>
-    </div>
+    </Stack>
   );
 };
 
