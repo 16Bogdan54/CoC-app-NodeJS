@@ -1,7 +1,7 @@
 import Unit from "@/components/troops/unit/Unit";
 import { getIconURL } from "@/components/utils/utils";
 import { useQueryCache } from "@/hooks/useQueryCache";
-import { Box, Grid, Stack, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import { Player } from "clashofclans.js";
 
 const TroopsList = () => {
