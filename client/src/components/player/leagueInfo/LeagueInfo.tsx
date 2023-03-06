@@ -1,37 +1,40 @@
 import { useQueryCache } from "@/hooks/useQueryCache";
 import { Player } from "clashofclans.js";
+import StarIcon from "@mui/icons-material/Star";
+import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 
 import style from "./league.module.css";
+import { Box, Stack, Typography } from "@mui/material";
 
 const LeagueInfo = () => {
   const player = useQueryCache<Player>("playerData");
 
   return (
-    <div className="text-white">
-      <div className={style.league_block}>
+    <Stack justifyContent="center" alignItems="center" className="text-white">
+      <Box className={style.league_block}>
         <img width={100} src={player.league.icon.url} alt="league icon" />
-        <div>
-          <h1>{player.league.name}</h1>
-          <h1>{player.trophies}</h1>
-        </div>
-      </div>
-      <div className="flex justify-between items-center">
-        <div className={style.war_stars_block}>
-          <h1>War Stars Won:</h1>
-          <div className="flex justify-between items-center bg-[#3a385d] rounded-md px-1">
-            <span>🌟</span>
-            <h1>{player.warStars}</h1>
-          </div>
-        </div>
-        <div className={style.trophies_block}>
-          <h1>All time best:</h1>
-          <div className="flex justify-between items-center bg-[#3a385d] rounded-md px-1">
-            <span>🏆</span>
-            <span>{player.bestTrophies}</span>
-          </div>
-        </div>
-      </div>
-    </div>
+        <Box>
+          <Typography variant="h6">{player.league.name}</Typography>
+          <Typography variant="body1">{player.trophies}</Typography>
+        </Box>
+      </Box>
+      <Box className="flex gap-4 items-center">
+        <Box className={style.war_stars_block}>
+          <Typography variant="body1">War Stars Won:</Typography>
+          <Box className="flex justify-between items-center bg-[#3681D8] rounded-md px-1">
+            <StarIcon />
+            <Typography variant="body2">{player.warStars}</Typography>
+          </Box>
+        </Box>
+        <Box className={style.trophies_block}>
+          <Typography variant="body1">All time best:</Typography>
+          <Box className="flex justify-between items-center bg-[#3681D8] rounded-md px-1">
+            <EmojiEventsIcon />
+            <Typography variant="body2">{player.bestTrophies}</Typography>
+          </Box>
+        </Box>
+      </Box>
+    </Stack>
   );
 };
 
