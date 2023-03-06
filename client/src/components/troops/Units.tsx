@@ -2,23 +2,24 @@ import TroopsList from "@/components/troops/troopsList/TroopsList";
 import HeroesList from "@/components/troops/heroesList/HeroesList";
 import SpellList from "@/components/troops/spellList/SpellList";
 import SiegeMachineList from "@/components/troops/siegeMachineList/SiegeMachineList";
-
-import style from "./styles/units.module.css";
+import { Grid } from "@mui/material";
 
 const Units = () => {
   return (
-    <div className={style.units_container}>
-      <div className={style.units_inner}>
-        <div>
-          <HeroesList />
-        </div>
-        <div>
-          <TroopsList />
-          <SpellList />
-          <SiegeMachineList />
-        </div>
-      </div>
-    </div>
+    <Grid container>
+      <Grid item xs={12} sm={6}>
+        <HeroesList />
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <SiegeMachineList />
+      </Grid>
+      <Grid item xs={12}>
+        <TroopsList />
+      </Grid>
+      <Grid item xs={12}>
+        <SpellList />
+      </Grid>
+    </Grid>
   );
 };
 

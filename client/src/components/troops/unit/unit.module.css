@@ -1,5 +1,5 @@
 .unit {
-    @apply relative border-2 border-black w-[70px] rounded-lg
+    @apply relative bg-[#3681D8] w-[70px] rounded-lg
 }
 
 .lvl {
