@@ -10,7 +10,6 @@ const ClanCapital = () => {
       exit={{ opacity: 0 }}
     >
       <PlayerClanCapital />
-      <hr />
       <Achievements />
     </motion.div>
   );

@@ -2,18 +2,21 @@ import React from "react";
 import PlayerInfo from "@/components/player/playerInfo/PlayerInfo";
 import ClanInfo from "@/components/player/clanInfo/ClanInfo";
 import ClanHouse from "@/components/player/myProfileClanHouse/ClanHouse";
-
-import style from "./style/style.module.css";
+import { Grid } from "@mui/material";
 
 const PlayerClanCapital = () => {
   return (
-    <div className={style.player_container}>
-      <div className={style.player_inner}>
+    <Grid container spacing={2} className="text-white">
+      <Grid item xs={6}>
         <PlayerInfo />
+      </Grid>
+      <Grid item xs={6}>
         <ClanInfo />
+      </Grid>
+      <Grid item xs={12}>
         <ClanHouse />
-      </div>
-    </div>
+      </Grid>
+    </Grid>
   );
 };
 
