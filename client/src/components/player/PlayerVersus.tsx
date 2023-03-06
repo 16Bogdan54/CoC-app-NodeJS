@@ -2,19 +2,24 @@ import PlayerInfo from "@/components/player/playerInfo/PlayerInfo";
 import ClanInfo from "@/components/player/clanInfo/ClanInfo";
 import VersusLeagueInfo from "@/components/player/versusLeagueInfo/VersusLeagueInfo";
 import VersusBottomStat from "@/components/player/versusBottomStat/VersusBottomStat";
-
-import style from "./style/style.module.css";
+import { Grid } from "@mui/material";
 
 const PlayerVersus = () => {
   return (
-    <div className={style.player_container}>
-      <div className={style.player_inner}>
+    <Grid container spacing={2} className="text-white">
+      <Grid item xs={6}>
         <PlayerInfo />
+      </Grid>
+      <Grid item xs={6}>
         <ClanInfo />
-        <VersusLeagueInfo />
-      </div>
-      <VersusBottomStat />
-    </div>
+      </Grid>
+      {/*<Grid item xs={6} md={4}>*/}
+      {/*  <VersusLeagueInfo />*/}
+      {/*</Grid>*/}
+      <Grid item xs={12}>
+        <VersusBottomStat />
+      </Grid>
+    </Grid>
   );
 };
 

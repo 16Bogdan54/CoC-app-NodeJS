@@ -12,9 +12,7 @@ const BuilderBasePlayer = () => {
       exit={{ opacity: 0 }}
     >
       <PlayerVersus />
-      <hr />
       <BuilderBaseTroops />
-      <hr />
       <Achievements />
     </motion.div>
   );
