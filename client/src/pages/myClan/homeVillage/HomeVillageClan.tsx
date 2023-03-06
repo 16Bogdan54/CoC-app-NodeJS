@@ -2,6 +2,7 @@ import ClanDescription from "@/components/clanDescription/ClanDescription";
 import ClanStat from "@/components/clanStat/ClanStat";
 import MembersHomeVillage from "@/components/membersHomeVillage/MembersHomeVillage";
 import { motion } from "framer-motion";
+import { Grid } from "@mui/material";
 
 const HomeVillageClan = () => {
   return (
@@ -10,10 +11,18 @@ const HomeVillageClan = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <div className="bg-[#7d7e66] grid grid-cols-2 p-2 rounded-lg">
-        <ClanDescription />
-        <ClanStat />
-      </div>
+      <Grid
+        container
+        spacing={1}
+        className="text-white grid grid-cols-2 p-2 rounded-lg"
+      >
+        <Grid item xs={12} md={6}>
+          <ClanDescription />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <ClanStat />
+        </Grid>
+      </Grid>
       <MembersHomeVillage />
     </motion.div>
   );

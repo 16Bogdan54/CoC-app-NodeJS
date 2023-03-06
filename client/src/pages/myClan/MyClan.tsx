@@ -23,7 +23,7 @@ const MyClan = () => {
       exit={{ opacity: 0 }}
     >
       <Grid container spacing={2} mt={8}>
-        <Grid item md={3}>
+        <Grid item xs={12} md={3}>
           <MyClanSubNavbar />
         </Grid>
         <Grid item md={9}>

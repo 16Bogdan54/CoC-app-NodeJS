@@ -5,7 +5,7 @@ const MyClanSubNavbar = () => {
   return (
     <Stack
       direction="column"
-      sx={{ position: "fixed" }}
+      // sx={{ position: "fixed" }}
       spacing={{ xs: 1, sm: 2, md: 4 }}
     >
       <NavButton to="/my-clan/">Home Village</NavButton>
