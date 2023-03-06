@@ -3,5 +3,5 @@
 }
 
 .navButton_active {
-    @apply bg-[#F1D412] px-10 py-2 text-xl text-black rounded-lg
+    @apply text-center bg-[#F1D412] px-10 py-2 text-xl text-black rounded-lg
 }
