@@ -10,7 +10,7 @@ const SpellList = () => {
   return (
     <Box className="text-white" p={2}>
       <Typography variant="h5">Spells</Typography>
-      <Grid container spacing={2} py={1}>
+      <Grid container spacing={1} py={1}>
         {player.spells.map((spell, index) => (
           <Grid item xs="auto">
             <Unit
