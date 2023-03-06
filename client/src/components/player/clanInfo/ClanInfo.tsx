@@ -7,11 +7,7 @@ const ClanInfo = () => {
   const player = useQueryCache<Player>("playerData");
 
   return (
-    <Stack
-      justifyContent="center"
-      alignItems="center"
-      sx={{ background: "red" }}
-    >
+    <Stack justifyContent="center" alignItems="center">
       <Typography variant="h5">{player.clan?.name}</Typography>
       <img width={100} src={player.clan?.badge.url} alt="clan logo" />
     </Stack>
