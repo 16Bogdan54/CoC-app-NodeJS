@@ -1,6 +1,4 @@
 import { renderStars } from "@/components/utils/utils";
-
-import style from "./achievement.module.css";
 import {
   Accordion,
   AccordionDetails,
@@ -8,6 +6,7 @@ import {
   Typography,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 
 type Props = {
   name: string;
@@ -17,15 +16,15 @@ type Props = {
 
 const Achievement = ({ name, info, stars }: Props) => {
   return (
-    <Accordion sx={{ my: 0.5, background: "#3681D8" }}>
+    <Accordion sx={{ my: 0.5, background: "#3681D8", color: "white" }}>
       <AccordionSummary
         expandIcon={<ExpandMoreIcon />}
         aria-controls="panel1a-content"
         id="panel1a-header"
       >
         <Typography>
-          {renderStars(stars)} {name}{" "}
-          <span className="ml-auto text-2xl">✅</span>
+          {renderStars(stars)} {name}
+          <CheckCircleOutlineIcon sx={{ background: "green", mx: 1, p: 0.1 }} />
         </Typography>
       </AccordionSummary>
       <AccordionDetails>
