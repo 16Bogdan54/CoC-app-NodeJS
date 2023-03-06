@@ -1,20 +1,18 @@
 import Achievement from "@/components/achievements/achievement/Achievement";
 import { useQueryCache } from "@/hooks/useQueryCache";
 import { Player } from "clashofclans.js";
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Typography,
-} from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import GradeOutlinedIcon from "@mui/icons-material/GradeOutlined";
+import { Box, Typography } from "@mui/material";
 
 const Achievements = () => {
   const player = useQueryCache<Player>("playerData");
 
   return (
-    <div>
-      <h2 className="text-2xl">⚔Home Village Achievements</h2>
+    <Box className="text-white">
+      <Typography variant="h5">
+        <GradeOutlinedIcon />
+        Home Village Achievements
+      </Typography>
       {player.achievements
         .filter(
           (achievement) =>
@@ -29,7 +27,10 @@ const Achievements = () => {
             />
           </div>
         ))}
-      <h2 className="text-2xl">⚔Builder Base Achievements</h2>
+      <Typography variant="h5">
+        <GradeOutlinedIcon />
+        Builder Base Achievements
+      </Typography>
       {player.achievements
         .filter(
           (achievement) =>
@@ -44,7 +45,7 @@ const Achievements = () => {
             />
           </div>
         ))}
-    </div>
+    </Box>
   );
 };
 
