@@ -15,13 +15,11 @@ const ClanDescription = () => {
           <Typography variant="h6">{clan.tag}</Typography>
         </Box>
       </Stack>
-      <Box>
-        <Typography variant="body1">{clan.description}</Typography>
-        <Box className="flex items-center gap-4 mt-2">
-          {clan.labels.map((label, index) => (
-            <img width={40} key={index} src={label.icon.url} alt="label" />
-          ))}
-        </Box>
+      <Typography variant="body2">{clan.description}</Typography>
+      <Box className="flex items-center gap-4 mt-2">
+        {clan.labels.map((label, index) => (
+          <img width={40} key={index} src={label.icon.url} alt="label" />
+        ))}
       </Box>
     </Stack>
   );
