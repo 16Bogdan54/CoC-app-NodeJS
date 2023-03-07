@@ -26,8 +26,12 @@ const MembersHomeVillage = () => {
   console.log(typeof clan.members);
 
   return (
-    <div style={{ height: 400 }}>
-      <DataGrid rows={rows} columns={columns} />
+    <div style={{ height: 500, width: "100%" }}>
+      <DataGrid
+        rows={rows}
+        columns={columns}
+        className="bg-[#3681D8] text-white"
+      />
     </div>
     // <div>
     //   {clan.members.map((member, index) => (
