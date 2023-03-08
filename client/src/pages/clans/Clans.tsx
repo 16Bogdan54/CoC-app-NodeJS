@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Box, Button, TextField } from "@mui/material";
+import { Box, Button, Grid, TextField } from "@mui/material";
 import React, { useRef } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { validate } from "@/validation/formValidation";
@@ -28,34 +28,39 @@ const Clans = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <Box
-        className="bg-white w-fit px-4 py-2 flex items-center justify-between gap-2 rounded-lg"
-        mt={10}
-      >
-        <TextField
-          id="outlined-basic"
-          label="Clan Tag"
-          variant="outlined"
-          size="small"
-          onChange={(e) => {
-            field.current = e.target.value;
-          }}
-        />
-
-        <Button
-          variant="contained"
-          size="large"
-          disabled={mutation.isLoading}
-          onClick={() => {
-            if (validate(field.current)) {
-              mutation.mutate(field.current);
-            }
-          }}
-        >
-          {mutation.isLoading ? "Loading..." : "Search"}
-        </Button>
-      </Box>
-      <SearchClan tag={field.current} />
+      <Grid container spacing={1}>
+        <Grid item xs={12}>
+          <Box
+            className="bg-white px-4 py-2 flex items-center justify-center gap-2 rounded-lg"
+            mt={10}
+          >
+            <TextField
+              id="outlined-basic"
+              label="Clan Tag"
+              variant="outlined"
+              size="small"
+              onChange={(e) => {
+                field.current = e.target.value;
+              }}
+            />
+            <Button
+              variant="contained"
+              size="large"
+              disabled={mutation.isLoading}
+              onClick={() => {
+                if (validate(field.current)) {
+                  mutation.mutate(field.current);
+                }
+              }}
+            >
+              {mutation.isLoading ? "Loading..." : "Search"}
+            </Button>
+          </Box>
+        </Grid>
+        <Grid item xs={12}>
+          <SearchClan tag={field.current} />
+        </Grid>
+      </Grid>
     </motion.div>
   );
 };
