@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, Location } from "react-router-dom";
 
 import style from "./styles/navbar.module.css";
 import { useState } from "react";
@@ -15,6 +15,8 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 
 const MainNavbar = () => {
+  let location: Location = useLocation();
+
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
@@ -33,10 +35,12 @@ const MainNavbar = () => {
         <ListItem disablePadding>
           <ListItemButton>
             <NavLink
-              className={({ isActive }) =>
-                isActive ? style.navlink_active : style.navlink
+              className={
+                location.pathname.includes("/my-profile/")
+                  ? style.navlink_active
+                  : style.navlink
               }
-              to="/"
+              to="/my-profile"
             >
               My Profile
             </NavLink>
@@ -45,8 +49,10 @@ const MainNavbar = () => {
         <ListItem disablePadding>
           <ListItemButton>
             <NavLink
-              className={({ isActive }) =>
-                isActive ? style.navlink_active : style.navlink
+              className={
+                location.pathname.includes("/my-clan")
+                  ? style.navlink_active
+                  : style.navlink
               }
               to="/my-clan/"
             >
@@ -116,16 +122,20 @@ const MainNavbar = () => {
             }}
           >
             <NavLink
-              className={({ isActive }) =>
-                isActive ? style.navlink_active : style.navlink
+              className={
+                location.pathname.includes("/my-profile/")
+                  ? style.navlink_active
+                  : style.navlink
               }
-              to="/"
+              to="/my-profile"
             >
               My Profile
             </NavLink>
             <NavLink
-              className={({ isActive }) =>
-                isActive ? style.navlink_active : style.navlink
+              className={
+                location.pathname.includes("/my-clan/")
+                  ? style.navlink_active
+                  : style.navlink
               }
               to="/my-clan/"
             >
