@@ -1,4 +1,4 @@
-import { Box, Button, TextField } from "@mui/material";
+import { Box, Button, Grid, TextField } from "@mui/material";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 
@@ -29,33 +29,39 @@ const Profiles = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <Box
-        className="bg-white w-fit px-4 py-2 flex items-center justify-between gap-2 rounded-lg"
-        mt={10}
-      >
-        <TextField
-          id="outlined-basic"
-          label="Player Tag"
-          variant="outlined"
-          size="small"
-          onChange={(e) => {
-            field.current = e.target.value;
-          }}
-        />
-        <Button
-          variant="contained"
-          size="large"
-          disabled={mutation.isLoading}
-          onClick={() => {
-            if (validate(field.current)) {
-              mutation.mutate(field.current);
-            }
-          }}
-        >
-          {mutation.isLoading ? "Loading..." : "Search"}
-        </Button>
-      </Box>
-      <SearchPlayer tag={field.current} />
+      <Grid container spacing={1}>
+        <Grid item xs={12}>
+          <Box
+            className="bg-white px-4 py-2 flex items-center justify-center gap-2 rounded-lg"
+            mt={10}
+          >
+            <TextField
+              id="outlined-basic"
+              label="Player Tag"
+              variant="outlined"
+              size="small"
+              onChange={(e) => {
+                field.current = e.target.value;
+              }}
+            />
+            <Button
+              variant="contained"
+              size="large"
+              disabled={mutation.isLoading}
+              onClick={() => {
+                if (validate(field.current)) {
+                  mutation.mutate(field.current);
+                }
+              }}
+            >
+              {mutation.isLoading ? "Loading..." : "Search"}
+            </Button>
+          </Box>
+        </Grid>
+      </Grid>
+      <Grid item xs={12}>
+        <SearchPlayer tag={field.current} />
+      </Grid>
     </motion.div>
   );
 };
