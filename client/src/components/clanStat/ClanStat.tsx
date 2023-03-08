@@ -1,20 +1,12 @@
 import ClanStatItem from "@/components/clanStatItem/ClanStatItem";
 import { useQueryCache } from "@/hooks/useQueryCache";
 import { Clan } from "clashofclans.js";
-import { Paper, Table, TableBody, TableContainer } from "@mui/material";
+import { Table, TableBody } from "@mui/material";
 
 const ClanStat = () => {
   const clan = useQueryCache<Clan>("clanData");
 
   return (
-    // <TableContainer
-    //   sx={{
-    //     xs: {
-    //       maxWidth: "350px",
-    //       backgroundColor: "red",
-    //     },
-    //   }}
-    // >
     <Table size="small">
       <TableBody
         sx={{
@@ -46,7 +38,6 @@ const ClanStat = () => {
         </ClanStatItem>
       </TableBody>
     </Table>
-    // </TableContainer>
   );
 };
 
