@@ -1,7 +1,6 @@
 import React from "react";
 import { useQueryCache } from "@/hooks/useQueryCache";
 import { Clan } from "clashofclans.js";
-import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { Box, CardContent, Grid, Typography } from "@mui/material";
 
 const MembersHomeVillage = () => {
