@@ -7,34 +7,34 @@ import { Box, CardContent, Grid, Typography } from "@mui/material";
 const MembersHomeVillage = () => {
   const clan = useQueryCache<Clan>("clanData");
 
-  const columns: GridColDef[] = [
-    { field: "id", headerName: "Rank", type: "number", width: 30 },
-    { field: "name", headerName: "Name", width: 140 },
-    { field: "role", headerName: "Role" },
-    {
-      field: "donations",
-      headerName: "Troops Donated",
-      type: "number",
-      width: 120,
-    },
-    {
-      field: "received",
-      headerName: "Troops Recieved",
-      type: "number",
-      width: 120,
-    },
-    { field: "trophies", headerName: "Trophies", type: "number" },
-  ];
+  // const columns: GridColDef[] = [
+  //   { field: "id", headerName: "Rank", type: "number", width: 30 },
+  //   { field: "name", headerName: "Name", width: 140 },
+  //   { field: "role", headerName: "Role" },
+  //   {
+  //     field: "donations",
+  //     headerName: "Troops Donated",
+  //     type: "number",
+  //     width: 120,
+  //   },
+  //   {
+  //     field: "received",
+  //     headerName: "Troops Recieved",
+  //     type: "number",
+  //     width: 120,
+  //   },
+  //   { field: "trophies", headerName: "Trophies", type: "number" },
+  // ];
+  //
+  // const rows = clan.members.map((member) =>
+  //   //  changes the rank key to the id, since MUI requires id
+  //   Object.assign(member, { id: member.clanRank })
+  // );
 
-  const rows = clan.members.map((member) =>
-    //  changes the rank key to the id, since MUI requires id
-    Object.assign(member, { id: member.clanRank })
-  );
-
-  console.log(
-    clan.members.map((member) => Object.assign(member, { id: member.clanRank }))
-  );
-  console.log(typeof clan.members);
+  // console.log(
+  //   clan.members.map((member) => Object.assign(member, { id: member.clanRank }))
+  // );
+  // console.log(typeof clan.members);
 
   return (
     // <Box sx={{ height: 400, width: 350 }}>
