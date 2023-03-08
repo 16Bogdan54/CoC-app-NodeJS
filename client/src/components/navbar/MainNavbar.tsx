@@ -36,7 +36,7 @@ const MainNavbar = () => {
           <ListItemButton>
             <NavLink
               className={
-                location.pathname.includes("/my-profile/")
+                location.pathname.includes("/my-profile")
                   ? style.navlink_active
                   : style.navlink
               }
@@ -123,7 +123,7 @@ const MainNavbar = () => {
           >
             <NavLink
               className={
-                location.pathname.includes("/my-profile/")
+                location.pathname.includes("/my-profile")
                   ? style.navlink_active
                   : style.navlink
               }
