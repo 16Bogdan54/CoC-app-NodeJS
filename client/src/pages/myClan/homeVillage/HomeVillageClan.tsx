@@ -22,8 +22,10 @@ const HomeVillageClan = () => {
         <Grid item xs={12} md={6}>
           <ClanStat />
         </Grid>
+        <Grid item xs={12}>
+          <MembersHomeVillage />
+        </Grid>
       </Grid>
-      <MembersHomeVillage />
     </motion.div>
   );
 };

@@ -8,6 +8,6 @@
     }
     body::-webkit-scrollbar{
         background-color: transparent;
-        width: 4px;
+        width: 0;
     }
 }
