@@ -50,7 +50,7 @@ const MembersHomeVillage = () => {
 
     <Grid container spacing={1}>
       {clan.members.map((member, index) => (
-        <Grid item xs={12} sm={6} md={4}>
+        <Grid item xs={12} sm={6} md={4} key={index}>
           <CardContent className="bg-[#3681D8] rounded-lg">
             <Typography
               sx={{ fontSize: 14 }}
