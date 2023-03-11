@@ -1,5 +1,4 @@
 import { NavLink, useLocation, Location } from "react-router-dom";
-
 import style from "./styles/navbar.module.css";
 import { useState } from "react";
 import {

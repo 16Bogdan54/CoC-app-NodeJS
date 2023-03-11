@@ -38,7 +38,7 @@ const AnimatedRoutes = () => {
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/my-profile" element={<MyProfile />}>
-            <Route path="/my-profile/" element={<HomeVillagePlayer />} />
+            <Route path="/my-profile" element={<HomeVillagePlayer />} />
             <Route
               path="/my-profile/builder-base-profile"
               element={<BuilderBasePlayer />}

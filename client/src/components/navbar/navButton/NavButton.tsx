@@ -15,6 +15,7 @@ const NavButton = ({ to, children }: Props) => {
         isActive ? style.navButton_active : style.navButton
       }
       to={to}
+      end
     >
       {children}
     </NavLink>
