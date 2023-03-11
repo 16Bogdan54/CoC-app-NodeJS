@@ -1,0 +1,20 @@
+.units_container {
+    @apply bg-[#69799A]  border-[3px] border-[#6A7497] rounded-[16px] my-4
+}
+
+.units_inner {
+    @apply bg-gradient-to-t from-[blue-gray-500] to-transparent
+    rounded-2xl text-white grid justify-center grid-cols-2
+}
+
+.units_outer {
+   @apply bg-[#606a8d] p-3 m-2 rounded-xl text-white
+}
+
+.units_heading {
+    @apply font-bold text-2xl
+}
+
+.img_container {
+    @apply flex items-center justify-center flex-wrap gap-2 my-2
+}

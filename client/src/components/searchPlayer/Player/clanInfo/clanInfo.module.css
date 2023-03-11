@@ -1,0 +1,3 @@
+.clanInfo_container {
+    @apply border-x-2 border-gray-600 flex flex-col items-center justify-around text-white font-bold
+}

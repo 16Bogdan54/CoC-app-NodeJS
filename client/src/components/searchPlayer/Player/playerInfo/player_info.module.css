@@ -1,0 +1,9 @@
+
+
+.exp_lvl {
+    @apply bg-[url('src/assets/expStar.svg')] bg-no-repeat bg-cover h-[45px] w-[45px] flex items-center justify-center font-bold text-lg text-white mx-2
+}
+
+.labels_block {
+    @apply flex items-center justify-between p-2
+}
