@@ -33,7 +33,8 @@ const Profiles = () => {
         <Grid item xs={12}>
           <Box
             className="bg-white px-4 py-2 flex items-center justify-center gap-2 rounded-lg"
-            mt={10}
+            mt={15}
+            mb={5}
           >
             <TextField
               id="outlined-basic"
